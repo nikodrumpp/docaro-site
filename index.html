@@ -49,7 +49,8 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.72); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border-subtle); }
 .nav-inner { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); height: 56px; display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { display: flex; align-items: center; gap: var(--space-sm); text-decoration: none; }
-.nav-logo-mark { width: 28px; height: 28px; border-radius: 7px; background: var(--accent); display: flex; align-items: center; justify-content: center; }
+.nav-logo-mark { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+.nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .nav-logo-text { font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); }
 .nav-cta { padding: 8px 18px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; border-radius: 20px; text-decoration: none; transition: opacity 0.15s; }
 .nav-cta:hover { opacity: 0.88; }
@@ -107,7 +108,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 .feature-card-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .feature-card-content { display: flex; flex-direction: column; gap: var(--space-xs); }
 
-/* WHY DOCARO — все три карточки строго одинакового размера */
+/* WHY DOCARO */
 .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
 .why-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; position: relative; transition: border-color 0.2s; }
 .why-card:first-child { border-color: var(--accent-border); }
@@ -181,12 +182,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <div class="nav-logo-mark">
-        <svg viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 10.5l2-5h10l2 5" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="1" y="10" width="14" height="3.5" rx="1" fill="white" opacity="0.9"/>
-          <circle cx="4" cy="13.5" r="1.2" fill="white"/>
-          <circle cx="12" cy="13.5" r="1.2" fill="white"/>
-        </svg>
+        <img src="assets/icons/app-icon.png" alt="Docaro" width="32" height="32"/>
       </div>
       <span class="nav-logo-text">Docaro</span>
     </a>
