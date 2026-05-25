@@ -64,8 +64,6 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 .hero-svg-wrap { width: 100%; max-width: 480px; border-radius: var(--radius-xl); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-card); }
 .hero-svg-wrap img { width: 100%; height: auto; display: block; }
 
-.placeholder-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.08em; text-align: center; padding: 0 var(--space-lg); }
-
 .store-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .store-actions.centered { justify-content: center; }
 .btn-store { display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; border-radius: 12px; text-decoration: none; flex-shrink: 0; transition: opacity 0.15s ease, transform 0.15s ease; }
@@ -80,14 +78,27 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 .btn-store-text .main { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
 .supporting-line { font-size: 13px; color: var(--text-tertiary); }
 
+/* PROBLEM */
 .problem { background: var(--bg-surface); }
 .problem-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
 .problem-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-md); transition: border-color 0.2s; }
 .problem-card:hover { border-color: var(--border-accent); }
-.problem-card-icon { width: 52px; height: 52px; border-radius: var(--radius-sm); background: var(--bg-elevated); border: 1px solid var(--border-card); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.problem-card-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Problem icon: fixed 52x52, SVG fills the box */
+.problem-card-icon {
+  width: 52px; height: 52px; flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-card);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.problem-card-icon img {
+  width: 52px; height: 52px;
+  display: block; flex-shrink: 0;
+}
 .problem-card-content { display: flex; flex-direction: column; gap: var(--space-sm); }
 
+/* SOLUTION */
 .solution-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); position: relative; }
 .solution-steps::before { content:''; position: absolute; top: 28px; left: calc(16.66% + 28px); right: calc(16.66% + 28px); height: 1px; background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 33%, var(--border-card) 33%, var(--border-card) 100%); z-index: 0; }
 .solution-step { display: flex; flex-direction: column; gap: var(--space-md); align-items: flex-start; position: relative; z-index: 1; }
@@ -95,27 +106,72 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 .step-number.active { background: var(--accent); color: #fff; }
 .step-number.inactive { background: var(--bg-card); border: 1px solid var(--border-card); color: var(--text-tertiary); }
 .step-content { display: flex; flex-direction: column; gap: var(--space-xs); }
-.solution-visual { margin-top: var(--space-3xl); background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); height: 200px; display: flex; align-items: center; justify-content: center; }
+/* Solution visual: fixed height, SVG fills width */
+.solution-visual {
+  margin-top: var(--space-3xl);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  line-height: 0;
+}
+.solution-visual img { width: 100%; height: auto; display: block; }
 
+/* FEATURES */
 .features { background: var(--bg-surface); }
 .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-md); }
 .feature-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg); transition: border-color 0.2s, background 0.2s; }
 .feature-card:hover { background: var(--bg-card-hover); border-color: var(--border-accent); }
-.feature-card-visual { width: 100%; aspect-ratio: 4/3; background: var(--bg-elevated); border: 1px solid var(--border-card); border-radius: var(--radius-md); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.feature-card-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Feature visual: aspect-ratio container, SVG fills it */
+.feature-card-visual {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-card);
+  overflow: hidden;
+  line-height: 0;
+}
+.feature-card-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .feature-card-content { display: flex; flex-direction: column; gap: var(--space-xs); }
 
+/* WHY DOCARO */
 .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
 .why-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg); position: relative; overflow: hidden; transition: border-color 0.2s; }
 .why-card:first-child { border-color: var(--accent-border); }
 .why-card:first-child::before { content:''; position: absolute; top:0; left:0; bottom:0; width:3px; background: var(--accent); }
 .why-card:hover { border-color: var(--border-accent); }
-.why-card-icon-lg { width: 100%; border-radius: var(--radius-md); background: var(--bg-elevated); border: 1px solid var(--border-card); overflow: hidden; aspect-ratio: 16/9; }
+/* Why large icon: 16:9 full-width illustration */
+.why-card-icon-lg {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-card);
+  overflow: hidden;
+  line-height: 0;
+}
 .why-card-icon-lg img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.why-card-icon-sm { width: 56px; height: 56px; border-radius: var(--radius-sm); background: var(--bg-elevated); border: 1px solid var(--border-card); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.why-card-icon-sm img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Why small icon: fixed 56x56 */
+.why-card-icon-sm {
+  width: 56px; height: 56px; flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-card);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.why-card-icon-sm img {
+  width: 56px; height: 56px;
+  display: block; flex-shrink: 0;
+}
 .why-card-content { display: flex; flex-direction: column; gap: var(--space-sm); }
 
+/* PRICING */
 .pricing { background: var(--bg-surface); }
 .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); max-width: 780px; margin: 0 auto; }
 .pricing-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg); }
@@ -141,10 +197,19 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 .btn-secondary:hover { border-color: var(--border-accent); color: var(--text-primary); }
 .cancel-line { font-size: 12px; color: var(--text-tertiary); text-align: center; }
 
+/* FINAL CTA */
 .final-cta { text-align: center; padding: var(--space-4xl) 0; display: flex; flex-direction: column; align-items: center; gap: var(--space-xl); }
 .final-cta .t-h1 { max-width: var(--text-width); margin: 0 auto; }
 .final-cta-actions { display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
-.final-visual { width:100%; max-width:880px; border-radius: var(--radius-xl); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-card); margin: 0 auto; }
+.final-visual {
+  width: 100%; max-width: 880px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  margin: 0 auto;
+  line-height: 0;
+}
 .final-visual img { width: 100%; height: auto; display: block; }
 
 .footer { border-top: 1px solid var(--border-subtle); padding: var(--space-xl) 0; }
@@ -231,27 +296,21 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     <div class="section-header"><h2 class="t-h1">Sound familiar?</h2></div>
     <div class="problem-grid">
       <div class="problem-card">
-        <div class="problem-card-icon">
-          <img src="assets/icons/problem_receipt_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="problem-card-icon"><img src="assets/icons/problem_receipt_dark.svg" alt="" loading="lazy" width="52" height="52"/></div>
         <div class="problem-card-content">
           <h3 class="t-h3">Receipts pile up. Then disappear.</h3>
           <p class="t-body-sm">Oil change, tires, brakes — you paid for it. But where’s the proof?</p>
         </div>
       </div>
       <div class="problem-card">
-        <div class="problem-card-icon">
-          <img src="assets/icons/problem_calendar_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="problem-card-icon"><img src="assets/icons/problem_calendar_dark.svg" alt="" loading="lazy" width="52" height="52"/></div>
         <div class="problem-card-content">
           <h3 class="t-h3">You missed the service date. Again.</h3>
           <p class="t-body-sm">No reminder. No record. Just a warning light you didn’t expect.</p>
         </div>
       </div>
       <div class="problem-card">
-        <div class="problem-card-icon">
-          <img src="assets/icons/problem_question_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="problem-card-icon"><img src="assets/icons/problem_question_dark.svg" alt="" loading="lazy" width="52" height="52"/></div>
         <div class="problem-card-content">
           <h3 class="t-h3">Selling your vehicle? You can’t prove anything.</h3>
           <p class="t-body-sm">Buyers want service history. You have a shoebox full of paper receipts. Maybe.</p>
@@ -285,7 +344,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
       </div>
     </div>
     <div class="solution-visual">
-      <img src="assets/icons/ai_scan_dark.svg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      <img src="assets/icons/ai_scan_dark.svg" alt="" loading="lazy"/>
     </div>
   </div>
 </section>
@@ -300,39 +359,27 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-card-visual">
-          <img src="assets/icons/feature_history_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="feature-card-visual"><img src="assets/icons/feature_history_dark.svg" alt="" loading="lazy"/></div>
         <div class="feature-card-content"><h3 class="t-h3">Full Service History</h3><p class="t-body-sm">Oil, tires, brakes, insurance, inspection — every record in one place. Always up to date.</p></div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-visual">
-          <img src="assets/icons/smart_reminders_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="feature-card-visual"><img src="assets/icons/smart_reminders_dark.svg" alt="" loading="lazy"/></div>
         <div class="feature-card-content"><h3 class="t-h3">Smart Reminders</h3><p class="t-body-sm">Set it once. Docaro reminds you before the next service date — so nothing slips through.</p></div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-visual">
-          <img src="assets/icons/unlimited_records_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="feature-card-visual"><img src="assets/icons/unlimited_records_dark.svg" alt="" loading="lazy"/></div>
         <div class="feature-card-content"><h3 class="t-h3">Expense Tracking</h3><p class="t-body-sm">See exactly how much your vehicle costs. Monthly, yearly, by category.</p></div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-visual">
-          <img src="assets/icons/feature_multicar_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="feature-card-visual"><img src="assets/icons/feature_multicar_dark.svg" alt="" loading="lazy"/></div>
         <div class="feature-card-content"><h3 class="t-h3">Multiple Vehicles</h3><p class="t-body-sm">Car, motorcycle, truck, boat — manage all of them in one account.</p></div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-visual">
-          <img src="assets/icons/pdf_export_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="feature-card-visual"><img src="assets/icons/pdf_export_dark.svg" alt="" loading="lazy"/></div>
         <div class="feature-card-content"><h3 class="t-h3">PDF Export</h3><p class="t-body-sm">Generate a clean service report in one tap. Ready to share with a buyer or mechanic.</p></div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-visual">
-          <img src="assets/icons/why_transfer_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="feature-card-visual"><img src="assets/icons/why_transfer_dark.svg" alt="" loading="lazy"/></div>
         <div class="feature-card-content"><h3 class="t-h3">History Transfer</h3><p class="t-body-sm">Selling your vehicle? Transfer the full service history to the new owner in one tap.</p></div>
       </div>
     </div>
@@ -349,27 +396,21 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     </div>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-card-icon-lg">
-          <img src="assets/icons/ai_scan_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="why-card-icon-lg"><img src="assets/icons/ai_scan_dark.svg" alt="" loading="lazy"/></div>
         <div class="why-card-content">
           <h3 class="t-h3">Snap a photo — AI does the rest</h3>
           <p class="t-body-sm">No typing. No manual forms. Point your camera at any receipt and Docaro creates the record automatically. Seconds, not minutes.</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon-sm">
-          <img src="assets/icons/why_transfer_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="why-card-icon-sm"><img src="assets/icons/why_transfer_dark.svg" alt="" loading="lazy" width="56" height="56"/></div>
         <div class="why-card-content">
           <h3 class="t-h3">Selling your vehicle? One tap to transfer</h3>
           <p class="t-body-sm">Your full service history transfers to the new owner instantly. No paperwork. No lost records. Just proof that your vehicle was cared for.</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon-sm">
-          <img src="assets/icons/why_privacy_dark.svg" alt="" loading="lazy"/>
-        </div>
+        <div class="why-card-icon-sm"><img src="assets/icons/why_privacy_dark.svg" alt="" loading="lazy" width="56" height="56"/></div>
         <div class="why-card-content">
           <h3 class="t-h3">Your data stays yours</h3>
           <p class="t-body-sm">No third-party access. No data selling. Your service history belongs to you — and only you.</p>
