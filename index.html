@@ -9,7 +9,6 @@
 <meta name="keywords" content="car service history app, vehicle maintenance tracker, digital service book, AI receipt scanner, service reminders, car expenses tracker">
 <link rel="canonical" href="https://docaro.botneversleeps.com/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://docaro.botneversleeps.com/">
 <meta property="og:title" content="Docaro — Digital Service Book for Cars & Vehicles">
@@ -20,19 +19,16 @@
 <meta property="og:site_name" content="Docaro">
 <meta property="og:locale" content="en_US">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Docaro — Digital Service Book for Cars & Vehicles">
 <meta name="twitter:description" content="Snap a receipt and Docaro logs your service history instantly. AI-powered car service book — free on iOS & Android.">
 <meta name="twitter:image" content="https://docaro.botneversleeps.com/assets/og-image.png">
 
-<!-- App meta -->
 <meta name="application-name" content="Docaro">
 <meta name="apple-itunes-app" content="app-id=6745016462">
 <meta name="theme-color" content="#080810">
-<link rel="icon" type="image/svg+xml" href="assets/icons/app-icon.svg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-<!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,210 +39,170 @@
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "iOS, Android",
   "offers": [
-    {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "name": "Free"
-    },
-    {
-      "@type": "Offer",
-      "price": "4.99",
-      "priceCurrency": "USD",
-      "name": "Pro"
-    }
+    {"@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free"},
+    {"@type": "Offer", "price": "4.99", "priceCurrency": "USD", "name": "Pro"}
   ]
 }
 </script>
 
 <style>
-
 :root {
-  --bg-base:        #080810;
-  --bg-surface:     #0F0F1A;
-  --bg-elevated:    #14141F;
-  --bg-card:        #17171F;
-  --bg-card-hover:  #1C1C28;
-  --accent:         #0A84FF;
-  --accent-dim:     rgba(10, 132, 255, 0.12);
-  --accent-border:  rgba(10, 132, 255, 0.30);
-  --text-primary:   #F5F5F7;
-  --text-secondary: #8E8E93;
-  --text-tertiary:  #48484A;
-  --border-subtle:  rgba(255, 255, 255, 0.05);
-  --border-card:    rgba(255, 255, 255, 0.08);
-  --border-accent:  rgba(10, 132, 255, 0.25);
-  --font-display: 'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif;
-  --font-text:    'SF Pro Text',    -apple-system, 'Helvetica Neue', sans-serif;
-  --font-mono:    'SF Mono', 'Fira Code', monospace;
-  --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px;
-  --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 128px;
-  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
-  --content-width: 1100px; --text-width: 680px;
+  --bg-base:#080810;--bg-surface:#0F0F1A;--bg-elevated:#14141F;--bg-card:#17171F;--bg-card-hover:#1C1C28;
+  --accent:#0A84FF;--accent-dim:rgba(10,132,255,0.12);--accent-border:rgba(10,132,255,0.30);
+  --text-primary:#F5F5F7;--text-secondary:#8E8E93;--text-tertiary:#48484A;
+  --border-subtle:rgba(255,255,255,0.05);--border-card:rgba(255,255,255,0.08);--border-accent:rgba(10,132,255,0.25);
+  --font-display:'SF Pro Display',-apple-system,'Helvetica Neue',sans-serif;
+  --font-text:'SF Pro Text',-apple-system,'Helvetica Neue',sans-serif;
+  --font-mono:'SF Mono','Fira Code',monospace;
+  --space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;
+  --space-xl:40px;--space-2xl:64px;--space-3xl:96px;--space-4xl:128px;
+  --radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;
+  --content-width:1100px;--text-width:680px;
 }
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { background-color: var(--bg-base); color: var(--text-primary); font-family: var(--font-text); font-size: 17px; line-height: 1.6; overflow-x: hidden; }
-
-.t-display { font-family: var(--font-display); font-size: clamp(40px, 6vw, 72px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; }
-.t-h1 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; }
-.t-h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
-.t-body-sm { font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
-.t-label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
-.t-sub { font-size: clamp(17px, 2vw, 21px); line-height: 1.55; color: var(--text-secondary); max-width: var(--text-width); }
-
-.container { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); }
-.section { padding: var(--space-4xl) 0; }
-.section-header { text-align: center; margin-bottom: var(--space-3xl); display: flex; flex-direction: column; align-items: center; gap: var(--space-md); }
-.section-divider { width: 100%; height: 1px; background: var(--border-subtle); }
-
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.72); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border-subtle); }
-.nav-inner { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); height: 56px; display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { display: flex; align-items: center; gap: var(--space-sm); text-decoration: none; }
-.nav-logo-mark { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
-.nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.nav-logo-text { font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); }
-.nav-cta { padding: 8px 18px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; border-radius: 20px; text-decoration: none; transition: opacity 0.15s; }
-.nav-cta:hover { opacity: 0.88; }
-
-.hero { padding-top: calc(56px + var(--space-4xl)); padding-bottom: var(--space-4xl); min-height: 100svh; display: flex; align-items: center; }
-.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; }
-.hero-content { display: flex; flex-direction: column; gap: var(--space-lg); }
-.hero-headline { display: flex; flex-direction: column; gap: var(--space-md); }
-.hero-headline .t-label { align-self: flex-start; }
-.hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-sm); margin-top: var(--space-xs); }
-.hero-visual { display: flex; align-items: center; justify-content: center; }
-.hero-svg-wrap { width: 100%; max-width: 480px; }
-.hero-svg-wrap img { width: 100%; height: auto; display: block; }
-
-.store-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.store-actions.centered { justify-content: center; }
-.btn-store { display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; border-radius: 12px; text-decoration: none; flex-shrink: 0; transition: opacity 0.15s ease, transform 0.15s ease; }
-.btn-store:hover { opacity: 0.88; transform: translateY(-1px); }
-.btn-store:active { transform: translateY(0); opacity: 1; }
-.btn-store.primary { background: var(--text-primary); color: var(--bg-base); }
-.btn-store.secondary { background: transparent; color: var(--text-primary); border: 1px solid rgba(255,255,255,0.18); }
-.btn-store.secondary:hover { border-color: rgba(255,255,255,0.35); }
-.btn-store-icon { width: 18px; height: 18px; flex-shrink: 0; }
-.btn-store-text { display: flex; flex-direction: column; line-height: 1.15; }
-.btn-store-text .sup { font-size: 9px; font-weight: 400; letter-spacing: 0.05em; opacity: 0.65; }
-.btn-store-text .main { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
-.supporting-line { font-size: 13px; color: var(--text-tertiary); }
-
-.problem { background: var(--bg-surface); }
-.problem-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
-.problem-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.2s; }
-.problem-card:hover { border-color: var(--border-accent); }
-.problem-card-visual { width: 100%; aspect-ratio: 16/9; overflow: hidden; line-height: 0; }
-.problem-card-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.problem-card-content { padding: var(--space-lg) var(--space-xl) var(--space-xl); display: flex; flex-direction: column; gap: var(--space-sm); }
-.problem-card-label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; }
-.problem-card-label.amber { color: #F59E0B; opacity: 0.8; }
-.problem-card-label.red   { color: #EF4444; opacity: 0.8; }
-.problem-card-label.gray  { color: #8E8E93; opacity: 0.7; }
-
-.solution-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); position: relative; }
-.solution-steps::before { content:''; position: absolute; top: 28px; left: calc(16.66% + 28px); right: calc(16.66% + 28px); height: 1px; background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 33%, var(--border-card) 33%, var(--border-card) 100%); z-index: 0; }
-.solution-step { display: flex; flex-direction: column; gap: var(--space-md); align-items: flex-start; position: relative; z-index: 1; }
-.step-number { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 20px; font-weight: 700; flex-shrink: 0; }
-.step-number.active { background: var(--accent); color: #fff; }
-.step-number.inactive { background: var(--bg-card); border: 1px solid var(--border-card); color: var(--text-tertiary); }
-.step-content { display: flex; flex-direction: column; gap: var(--space-xs); }
-.solution-visual { margin-top: var(--space-3xl); border-radius: var(--radius-xl); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-card); line-height: 0; }
-.solution-visual img { width: 100%; height: auto; display: block; }
-
-.features { background: var(--bg-surface); }
-.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-md); }
-.feature-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg); transition: border-color 0.2s, background 0.2s; }
-.feature-card:hover { background: var(--bg-card-hover); border-color: var(--border-accent); }
-.feature-card-visual { width: 100%; aspect-ratio: 4/3; border-radius: var(--radius-md); background: var(--bg-elevated); border: 1px solid var(--border-card); overflow: hidden; line-height: 0; }
-.feature-card-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.feature-card-content { display: flex; flex-direction: column; gap: var(--space-xs); }
-
-.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
-.why-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; position: relative; transition: border-color 0.2s; }
-.why-card:first-child { border-color: var(--accent-border); }
-.why-card:first-child::before { content:''; position: absolute; top:0; left:0; bottom:0; width:3px; background: var(--accent); z-index: 1; }
-.why-card:hover { border-color: var(--border-accent); }
-.why-card-visual { width: 100%; aspect-ratio: 16/9; overflow: hidden; line-height: 0; flex-shrink: 0; }
-.why-card-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.why-card-content { padding: var(--space-lg) var(--space-xl) var(--space-xl); display: flex; flex-direction: column; gap: var(--space-sm); flex: 1; }
-
-.pricing { background: var(--bg-surface); }
-.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); max-width: 780px; margin: 0 auto; }
-.pricing-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg); }
-.pricing-card.pricing-pro { border-color: var(--accent-border); background: var(--bg-elevated); position: relative; }
-.pricing-badge { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; align-self: flex-start; }
-.pricing-badge.free { background: var(--bg-elevated); color: var(--text-secondary); border: 1px solid var(--border-card); }
-.pricing-badge.pro { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); }
-.pricing-popular { position: absolute; top:-1px; right: var(--space-xl); padding: 4px 14px; background: var(--accent); color:#fff; font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
-.pricing-price { display: flex; flex-direction: column; gap: 2px; }
-.pricing-amount { font-family: var(--font-display); font-size: 48px; font-weight: 700; letter-spacing: -0.04em; color: var(--text-primary); line-height: 1; }
-.pricing-period { font-size: 15px; color: var(--text-secondary); }
-.pricing-subline { font-size: 13px; color: var(--text-tertiary); }
-.pricing-features { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); flex: 1; }
-.pricing-features li { display: flex; align-items: center; gap: var(--space-sm); font-size: 15px; color: var(--text-secondary); }
-.pricing-features li .check { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-.pricing-features li .check.accent { background: var(--accent-dim); color: var(--accent); }
-.pricing-features li .check.muted { background: var(--bg-elevated); color: var(--text-tertiary); }
-.pricing-cta { display: flex; flex-direction: column; gap: var(--space-sm); }
-
-.btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 14px 24px; background: var(--accent); color:#fff; font-size:16px; font-weight:500; border-radius:14px; text-decoration:none; border:none; cursor:pointer; transition: opacity 0.15s, transform 0.15s; width:100%; text-align:center; }
-.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-.btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 14px 24px; background: transparent; color: var(--text-secondary); font-size:16px; font-weight:500; border-radius:14px; text-decoration:none; border: 1px solid var(--border-card); cursor:pointer; transition: border-color 0.15s, color 0.15s; width:100%; text-align:center; }
-.btn-secondary:hover { border-color: var(--border-accent); color: var(--text-primary); }
-.cancel-line { font-size: 12px; color: var(--text-tertiary); text-align: center; }
-
-.final-cta { text-align: center; padding: var(--space-4xl) 0; display: flex; flex-direction: column; align-items: center; gap: var(--space-xl); }
-.final-cta .t-h1 { max-width: var(--text-width); margin: 0 auto; }
-.final-cta-actions { display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
-.final-visual { width: 100%; max-width: 880px; border-radius: var(--radius-xl); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-card); margin: 0 auto; line-height: 0; }
-.final-visual img { width: 100%; height: auto; display: block; }
-
-.footer { border-top: 1px solid var(--border-subtle); padding: var(--space-xl) 0; }
-.footer-inner { max-width: var(--content-width); margin:0 auto; padding: 0 var(--space-lg); display:flex; align-items:center; justify-content:space-between; }
-.footer-copy { font-size: 13px; color: var(--text-tertiary); }
-.footer-links { display: flex; gap: var(--space-lg); }
-.footer-link { font-size: 13px; color: var(--text-tertiary); text-decoration: none; transition: color 0.15s; }
-.footer-link:hover { color: var(--text-secondary); }
-
-@media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: var(--space-xl); }
-  .hero-visual { order: -1; }
-  .hero-svg-wrap { max-width: 340px; }
-  .hero-actions, .store-actions { align-items: center; }
-  .hero-content { text-align: center; align-items: center; }
-  .hero-headline .t-label { align-self: center; }
-  .problem-grid, .features-grid, .why-grid { grid-template-columns: 1fr; }
-  .solution-steps { grid-template-columns: 1fr; }
-  .solution-steps::before { display: none; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(--font-text);font-size:17px;line-height:1.6;overflow-x:hidden}
+.t-display{font-family:var(--font-display);font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.05;letter-spacing:-0.03em}
+.t-h1{font-family:var(--font-display);font-size:clamp(28px,4vw,48px);font-weight:700;line-height:1.1;letter-spacing:-0.025em}
+.t-h3{font-family:var(--font-display);font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-0.01em}
+.t-body-sm{font-size:15px;line-height:1.6;color:var(--text-secondary)}
+.t-label{font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent)}
+.t-sub{font-size:clamp(17px,2vw,21px);line-height:1.55;color:var(--text-secondary);max-width:var(--text-width)}
+.container{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg)}
+.section{padding:var(--space-4xl) 0}
+.section-header{text-align:center;margin-bottom:var(--space-3xl);display:flex;flex-direction:column;align-items:center;gap:var(--space-md)}
+.section-divider{width:100%;height:1px;background:var(--border-subtle)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,16,0.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border-subtle)}
+.nav-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:var(--space-sm);text-decoration:none}
+.nav-logo-mark{width:32px;height:32px;border-radius:8px;overflow:hidden;flex-shrink:0}
+.nav-logo-mark img{width:100%;height:100%;object-fit:cover;display:block}
+.nav-logo-text{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.01em;color:var(--text-primary)}
+.nav-cta{padding:8px 18px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;border-radius:20px;text-decoration:none;transition:opacity 0.15s}
+.nav-cta:hover{opacity:0.88}
+.hero{padding-top:calc(56px + var(--space-4xl));padding-bottom:var(--space-4xl);min-height:100svh;display:flex;align-items:center}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3xl);align-items:center}
+.hero-content{display:flex;flex-direction:column;gap:var(--space-lg)}
+.hero-headline{display:flex;flex-direction:column;gap:var(--space-md)}
+.hero-headline .t-label{align-self:flex-start}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-sm);margin-top:var(--space-xs)}
+.hero-visual{display:flex;align-items:center;justify-content:center}
+.hero-svg-wrap{width:100%;max-width:480px}
+.hero-svg-wrap img{width:100%;height:auto;display:block}
+.store-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.store-actions.centered{justify-content:center}
+.btn-store{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border-radius:12px;text-decoration:none;flex-shrink:0;transition:opacity 0.15s ease,transform 0.15s ease}
+.btn-store:hover{opacity:0.88;transform:translateY(-1px)}
+.btn-store:active{transform:translateY(0);opacity:1}
+.btn-store.primary{background:var(--text-primary);color:var(--bg-base)}
+.btn-store.secondary{background:transparent;color:var(--text-primary);border:1px solid rgba(255,255,255,0.18)}
+.btn-store.secondary:hover{border-color:rgba(255,255,255,0.35)}
+.btn-store-icon{width:18px;height:18px;flex-shrink:0}
+.btn-store-text{display:flex;flex-direction:column;line-height:1.15}
+.btn-store-text .sup{font-size:9px;font-weight:400;letter-spacing:0.05em;opacity:0.65}
+.btn-store-text .main{font-size:16px;font-weight:600;letter-spacing:-0.01em}
+.supporting-line{font-size:13px;color:var(--text-tertiary)}
+.problem{background:var(--bg-surface)}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg)}
+.problem-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:border-color 0.2s}
+.problem-card:hover{border-color:var(--border-accent)}
+.problem-card-visual{width:100%;aspect-ratio:16/9;overflow:hidden;line-height:0}
+.problem-card-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.problem-card-content{padding:var(--space-lg) var(--space-xl) var(--space-xl);display:flex;flex-direction:column;gap:var(--space-sm)}
+.problem-card-label{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.10em;text-transform:uppercase}
+.problem-card-label.amber{color:#F59E0B;opacity:0.8}
+.problem-card-label.red{color:#EF4444;opacity:0.8}
+.problem-card-label.gray{color:#8E8E93;opacity:0.7}
+.solution-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);position:relative}
+.solution-steps::before{content:'';position:absolute;top:28px;left:calc(16.66% + 28px);right:calc(16.66% + 28px);height:1px;background:linear-gradient(90deg,var(--accent) 0%,var(--accent) 33%,var(--border-card) 33%,var(--border-card) 100%);z-index:0}
+.solution-step{display:flex;flex-direction:column;gap:var(--space-md);align-items:flex-start;position:relative;z-index:1}
+.step-number{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:20px;font-weight:700;flex-shrink:0}
+.step-number.active{background:var(--accent);color:#fff}
+.step-number.inactive{background:var(--bg-card);border:1px solid var(--border-card);color:var(--text-tertiary)}
+.step-content{display:flex;flex-direction:column;gap:var(--space-xs)}
+.solution-visual{margin-top:var(--space-3xl);border-radius:var(--radius-xl);overflow:hidden;background:var(--bg-card);border:1px solid var(--border-card);line-height:0}
+.solution-visual img{width:100%;height:auto;display:block}
+.features{background:var(--bg-surface)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+.feature-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);padding:var(--space-xl);display:flex;flex-direction:column;gap:var(--space-lg);transition:border-color 0.2s,background 0.2s}
+.feature-card:hover{background:var(--bg-card-hover);border-color:var(--border-accent)}
+.feature-card-visual{width:100%;aspect-ratio:4/3;border-radius:var(--radius-md);background:var(--bg-elevated);border:1px solid var(--border-card);overflow:hidden;line-height:0}
+.feature-card-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.feature-card-content{display:flex;flex-direction:column;gap:var(--space-xs)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg)}
+.why-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;position:relative;transition:border-color 0.2s}
+.why-card:first-child{border-color:var(--accent-border)}
+.why-card:first-child::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--accent);z-index:1}
+.why-card:hover{border-color:var(--border-accent)}
+.why-card-visual{width:100%;aspect-ratio:16/9;overflow:hidden;line-height:0;flex-shrink:0}
+.why-card-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.why-card-content{padding:var(--space-lg) var(--space-xl) var(--space-xl);display:flex;flex-direction:column;gap:var(--space-sm);flex:1}
+.pricing{background:var(--bg-surface)}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-lg);max-width:780px;margin:0 auto}
+.pricing-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius-xl);padding:var(--space-xl);display:flex;flex-direction:column;gap:var(--space-lg)}
+.pricing-card.pricing-pro{border-color:var(--accent-border);background:var(--bg-elevated);position:relative}
+.pricing-badge{display:inline-flex;align-items:center;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500;letter-spacing:0.04em;align-self:flex-start}
+.pricing-badge.free{background:var(--bg-elevated);color:var(--text-secondary);border:1px solid var(--border-card)}
+.pricing-badge.pro{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
+.pricing-popular{position:absolute;top:-1px;right:var(--space-xl);padding:4px 14px;background:var(--accent);color:#fff;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border-radius:0 0 var(--radius-sm) var(--radius-sm)}
+.pricing-price{display:flex;flex-direction:column;gap:2px}
+.pricing-amount{font-family:var(--font-display);font-size:48px;font-weight:700;letter-spacing:-0.04em;color:var(--text-primary);line-height:1}
+.pricing-period{font-size:15px;color:var(--text-secondary)}
+.pricing-subline{font-size:13px;color:var(--text-tertiary)}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:var(--space-sm);flex:1}
+.pricing-features li{display:flex;align-items:center;gap:var(--space-sm);font-size:15px;color:var(--text-secondary)}
+.pricing-features li .check{width:18px;height:18px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.pricing-features li .check.accent{background:var(--accent-dim);color:var(--accent)}
+.pricing-features li .check.muted{background:var(--bg-elevated);color:var(--text-tertiary)}
+.pricing-cta{display:flex;flex-direction:column;gap:var(--space-sm)}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;background:var(--accent);color:#fff;font-size:16px;font-weight:500;border-radius:14px;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.15s,transform 0.15s;width:100%;text-align:center}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;background:transparent;color:var(--text-secondary);font-size:16px;font-weight:500;border-radius:14px;text-decoration:none;border:1px solid var(--border-card);cursor:pointer;transition:border-color 0.15s,color 0.15s;width:100%;text-align:center}
+.btn-secondary:hover{border-color:var(--border-accent);color:var(--text-primary)}
+.cancel-line{font-size:12px;color:var(--text-tertiary);text-align:center}
+.final-cta{text-align:center;padding:var(--space-4xl) 0;display:flex;flex-direction:column;align-items:center;gap:var(--space-xl)}
+.final-cta .t-h1{max-width:var(--text-width);margin:0 auto}
+.final-cta-actions{display:flex;flex-direction:column;align-items:center;gap:var(--space-sm)}
+.final-visual{width:100%;max-width:880px;border-radius:var(--radius-xl);overflow:hidden;background:var(--bg-card);border:1px solid var(--border-card);margin:0 auto;line-height:0}
+.final-visual img{width:100%;height:auto;display:block}
+.footer{border-top:1px solid var(--border-subtle);padding:var(--space-xl) 0}
+.footer-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:13px;color:var(--text-tertiary)}
+.footer-links{display:flex;gap:var(--space-lg)}
+.footer-link{font-size:13px;color:var(--text-tertiary);text-decoration:none;transition:color 0.15s}
+.footer-link:hover{color:var(--text-secondary)}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:var(--space-xl)}
+  .hero-visual{order:-1}
+  .hero-svg-wrap{max-width:340px}
+  .hero-actions,.store-actions{align-items:center}
+  .hero-content{text-align:center;align-items:center}
+  .hero-headline .t-label{align-self:center}
+  .problem-grid,.features-grid,.why-grid{grid-template-columns:1fr}
+  .solution-steps{grid-template-columns:1fr}
+  .solution-steps::before{display:none}
+  .pricing-grid{grid-template-columns:1fr;max-width:420px}
 }
-@media (max-width: 600px) {
-  .section { padding: var(--space-3xl) 0; }
-  .nav-inner, .container { padding: 0 var(--space-md); }
-  .footer-inner { flex-direction: column; gap: var(--space-sm); text-align: center; }
-  .btn-store { width: 100%; justify-content: center; }
-  .store-actions { flex-direction: column; align-items: stretch; }
-  .store-actions.centered { align-items: center; }
+@media(max-width:600px){
+  .section{padding:var(--space-3xl) 0}
+  .nav-inner,.container{padding:0 var(--space-md)}
+  .footer-inner{flex-direction:column;gap:var(--space-sm);text-align:center}
+  .btn-store{width:100%;justify-content:center}
+  .store-actions{flex-direction:column;align-items:stretch}
+  .store-actions.centered{align-items:center}
 }
 </style>
 </head>
 <body>
-
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <div class="nav-logo-mark">
-        <img src="assets/icons/app-icon.svg" alt="Docaro app icon" width="32" height="32"/>
-      </div>
+      <div class="nav-logo-mark"><img src="assets/icons/app-icon.svg" alt="Docaro" width="32" height="32"/></div>
       <span class="nav-logo-text">Docaro</span>
     </a>
     <a href="#" class="nav-cta">Download Free</a>
   </div>
 </nav>
-
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
@@ -259,11 +215,11 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
         <div class="hero-actions">
           <div class="store-actions">
             <a href="#" class="btn-store primary" aria-label="Download Docaro on the App Store">
-              <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/></svg>
+              <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/></svg>
               <div class="btn-store-text"><span class="sup">Download on the</span><span class="main">App Store</span></div>
             </a>
             <a href="#" class="btn-store secondary" aria-label="Get Docaro on Google Play">
-              <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.4 1.2C2 1.6 2 2.2 2 3v14c0 .8 0 1.4.4 1.8L2.5 19l7.8-7.8v-.2L2.5 3l-.1.2zM16.3 13.7l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.8-.1-.1zM2.5 18.9c.3.3.8.3 1.3 0L13.6 13l-2.7-2.7-8.4 8.5.1.1zM3.8 1.1L13.6 7 10.9 9.7 3.8 2.4V1.4l.1-.3z"/></svg>
+              <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.4 1.2C2 1.6 2 2.2 2 3v14c0 .8 0 1.4.4 1.8L2.5 19l7.8-7.8v-.2L2.5 3l-.1.2zM16.3 13.7l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.8-.1-.1zM2.5 18.9c.3.3.8.3 1.3 0L13.6 13l-2.7-2.7-8.4 8.5.1.1zM3.8 1.1L13.6 7 10.9 9.7 3.8 2.4V1.4l.1-.3z"/></svg>
               <div class="btn-store-text"><span class="sup">Get it on</span><span class="main">Google Play</span></div>
             </a>
           </div>
@@ -278,9 +234,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
-
 <section class="section problem">
   <div class="container">
     <div class="section-header"><h2 class="t-h1">Sound familiar?</h2></div>
@@ -312,9 +266,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
-
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -323,27 +275,14 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
       <p class="t-sub">No typing. No forms. Just point your camera at any receipt — Docaro reads it and creates the record automatically.</p>
     </div>
     <div class="solution-steps">
-      <div class="solution-step">
-        <div class="step-number active">1</div>
-        <div class="step-content"><h3 class="t-h3">Snap the receipt</h3><p class="t-body-sm">Any receipt. Any format. Paper or digital.</p></div>
-      </div>
-      <div class="solution-step">
-        <div class="step-number inactive">2</div>
-        <div class="step-content"><h3 class="t-h3">AI reads it instantly</h3><p class="t-body-sm">Date, mileage, service type, cost — extracted automatically.</p></div>
-      </div>
-      <div class="solution-step">
-        <div class="step-number inactive">3</div>
-        <div class="step-content"><h3 class="t-h3">Your history grows</h3><p class="t-body-sm">Every record saved, sorted, and searchable. Forever.</p></div>
-      </div>
+      <div class="solution-step"><div class="step-number active">1</div><div class="step-content"><h3 class="t-h3">Snap the receipt</h3><p class="t-body-sm">Any receipt. Any format. Paper or digital.</p></div></div>
+      <div class="solution-step"><div class="step-number inactive">2</div><div class="step-content"><h3 class="t-h3">AI reads it instantly</h3><p class="t-body-sm">Date, mileage, service type, cost — extracted automatically.</p></div></div>
+      <div class="solution-step"><div class="step-number inactive">3</div><div class="step-content"><h3 class="t-h3">Your history grows</h3><p class="t-body-sm">Every record saved, sorted, and searchable. Forever.</p></div></div>
     </div>
-    <div class="solution-visual">
-      <img src="assets/icons/ai_scan_dark.svg" alt="AI scanning a car service receipt" loading="lazy"/>
-    </div>
+    <div class="solution-visual"><img src="assets/icons/ai_scan_dark.svg" alt="AI scanning a car service receipt" loading="lazy"/></div>
   </div>
 </section>
-
 <div class="section-divider"></div>
-
 <section class="section features">
   <div class="container">
     <div class="section-header">
@@ -351,36 +290,16 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
       <h2 class="t-h1">One app. Full control.</h2>
     </div>
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-card-visual"><img src="assets/icons/feature_history_dark.svg" alt="Full vehicle service history" loading="lazy"/></div>
-        <div class="feature-card-content"><h3 class="t-h3">Full Service History</h3><p class="t-body-sm">Oil, tires, brakes, insurance, inspection — every record in one place. Always up to date.</p></div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-visual"><img src="assets/icons/smart_reminders_dark.svg" alt="Smart service reminders" loading="lazy"/></div>
-        <div class="feature-card-content"><h3 class="t-h3">Smart Reminders</h3><p class="t-body-sm">Set it once. Docaro reminds you before the next service date — so nothing slips through.</p></div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-visual"><img src="assets/icons/unlimited_records_dark.svg" alt="Vehicle expense tracking" loading="lazy"/></div>
-        <div class="feature-card-content"><h3 class="t-h3">Expense Tracking</h3><p class="t-body-sm">See exactly how much your vehicle costs. Monthly, yearly, by category.</p></div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-visual"><img src="assets/icons/feature_multicar_dark.svg" alt="Multiple vehicles management" loading="lazy"/></div>
-        <div class="feature-card-content"><h3 class="t-h3">Multiple Vehicles</h3><p class="t-body-sm">Car, motorcycle, truck, boat — manage all of them in one account.</p></div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-visual"><img src="assets/icons/pdf_export_dark.svg" alt="PDF service report export" loading="lazy"/></div>
-        <div class="feature-card-content"><h3 class="t-h3">PDF Export</h3><p class="t-body-sm">Generate a clean service report in one tap. Ready to share with a buyer or mechanic.</p></div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-visual"><img src="assets/icons/why_transfer_dark.svg" alt="Transfer vehicle history to new owner" loading="lazy"/></div>
-        <div class="feature-card-content"><h3 class="t-h3">History Transfer</h3><p class="t-body-sm">Selling your vehicle? Transfer the full service history to the new owner in one tap.</p></div>
-      </div>
+      <div class="feature-card"><div class="feature-card-visual"><img src="assets/icons/feature_history_dark.svg" alt="Full vehicle service history" loading="lazy"/></div><div class="feature-card-content"><h3 class="t-h3">Full Service History</h3><p class="t-body-sm">Oil, tires, brakes, insurance, inspection — every record in one place. Always up to date.</p></div></div>
+      <div class="feature-card"><div class="feature-card-visual"><img src="assets/icons/smart_reminders_dark.svg" alt="Smart service reminders" loading="lazy"/></div><div class="feature-card-content"><h3 class="t-h3">Smart Reminders</h3><p class="t-body-sm">Set it once. Docaro reminds you before the next service date — so nothing slips through.</p></div></div>
+      <div class="feature-card"><div class="feature-card-visual"><img src="assets/icons/unlimited_records_dark.svg" alt="Vehicle expense tracking" loading="lazy"/></div><div class="feature-card-content"><h3 class="t-h3">Expense Tracking</h3><p class="t-body-sm">See exactly how much your vehicle costs. Monthly, yearly, by category.</p></div></div>
+      <div class="feature-card"><div class="feature-card-visual"><img src="assets/icons/feature_multicar_dark.svg" alt="Multiple vehicles management" loading="lazy"/></div><div class="feature-card-content"><h3 class="t-h3">Multiple Vehicles</h3><p class="t-body-sm">Car, motorcycle, truck, boat — manage all of them in one account.</p></div></div>
+      <div class="feature-card"><div class="feature-card-visual"><img src="assets/icons/pdf_export_dark.svg" alt="PDF service report export" loading="lazy"/></div><div class="feature-card-content"><h3 class="t-h3">PDF Export</h3><p class="t-body-sm">Generate a clean service report in one tap. Ready to share with a buyer or mechanic.</p></div></div>
+      <div class="feature-card"><div class="feature-card-visual"><img src="assets/icons/why_transfer_dark.svg" alt="Transfer vehicle history to new owner" loading="lazy"/></div><div class="feature-card-content"><h3 class="t-h3">History Transfer</h3><p class="t-body-sm">Selling your vehicle? Transfer the full service history to the new owner in one tap.</p></div></div>
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
-
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -388,33 +307,13 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
       <h2 class="t-h1">Built different. For a reason.</h2>
     </div>
     <div class="why-grid">
-      <div class="why-card">
-        <div class="why-card-visual"><img src="assets/icons/why_ai_scan_dark.svg" alt="" loading="lazy"/></div>
-        <div class="why-card-content">
-          <h3 class="t-h3">Snap a photo — AI does the rest</h3>
-          <p class="t-body-sm">No typing. No manual forms. Point your camera at any receipt and Docaro creates the record automatically. Seconds, not minutes.</p>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-card-visual"><img src="assets/icons/why_transfer_dark.svg" alt="" loading="lazy"/></div>
-        <div class="why-card-content">
-          <h3 class="t-h3">Selling your vehicle? One tap to transfer</h3>
-          <p class="t-body-sm">Your full service history transfers to the new owner instantly. No paperwork. No lost records. Just proof that your vehicle was cared for.</p>
-        </div>
-      </div>
-      <div class="why-card">
-        <div class="why-card-visual"><img src="assets/icons/why_privacy_dark.svg" alt="" loading="lazy"/></div>
-        <div class="why-card-content">
-          <h3 class="t-h3">Your data stays yours</h3>
-          <p class="t-body-sm">No third-party access. No data selling. Your service history belongs to you — and only you.</p>
-        </div>
-      </div>
+      <div class="why-card"><div class="why-card-visual"><img src="assets/icons/why_ai_scan_dark.svg" alt="" loading="lazy"/></div><div class="why-card-content"><h3 class="t-h3">Snap a photo — AI does the rest</h3><p class="t-body-sm">No typing. No manual forms. Point your camera at any receipt and Docaro creates the record automatically. Seconds, not minutes.</p></div></div>
+      <div class="why-card"><div class="why-card-visual"><img src="assets/icons/why_transfer_dark.svg" alt="" loading="lazy"/></div><div class="why-card-content"><h3 class="t-h3">Selling your vehicle? One tap to transfer</h3><p class="t-body-sm">Your full service history transfers to the new owner instantly. No paperwork. No lost records. Just proof that your vehicle was cared for.</p></div></div>
+      <div class="why-card"><div class="why-card-visual"><img src="assets/icons/why_privacy_dark.svg" alt="" loading="lazy"/></div><div class="why-card-content"><h3 class="t-h3">Your data stays yours</h3><p class="t-body-sm">No third-party access. No data selling. Your service history belongs to you — and only you.</p></div></div>
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
-
 <section class="section pricing">
   <div class="container">
     <div class="section-header">
@@ -436,11 +335,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
       <div class="pricing-card pricing-pro">
         <div class="pricing-popular">Most Popular</div>
         <div class="pricing-badge pro">Pro</div>
-        <div class="pricing-price">
-          <span class="pricing-amount">$4.99</span>
-          <span class="pricing-period">/ month</span>
-          <span class="pricing-subline">or $29.99 / year — save 50%</span>
-        </div>
+        <div class="pricing-price"><span class="pricing-amount">$4.99</span><span class="pricing-period">/ month</span><span class="pricing-subline">or $29.99 / year — save 50%</span></div>
         <ul class="pricing-features">
           <li><span class="check accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5l2 2 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Unlimited vehicles</li>
           <li><span class="check accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5l2 2 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Unlimited records</li>
@@ -458,25 +353,21 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     </div>
   </div>
 </section>
-
 <div class="section-divider"></div>
-
 <section class="section">
   <div class="container">
     <div class="final-cta">
-      <div class="final-visual">
-        <img src="assets/icons/final_cta_dark.svg" alt="Docaro vehicle service timeline" loading="lazy"/>
-      </div>
+      <div class="final-visual"><img src="assets/icons/final_cta_dark.svg" alt="Docaro vehicle service timeline" loading="lazy"/></div>
       <h2 class="t-h1">Your vehicle deserves better than a shoebox.</h2>
       <p class="t-sub" style="text-align:center">Start building your service history today. Free, forever — or go Pro and let AI do the work.</p>
       <div class="final-cta-actions">
         <div class="store-actions centered">
           <a href="#" class="btn-store primary" aria-label="Download Docaro on the App Store">
-            <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/></svg>
+            <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/></svg>
             <div class="btn-store-text"><span class="sup">Download on the</span><span class="main">App Store</span></div>
           </a>
           <a href="#" class="btn-store secondary" aria-label="Get Docaro on Google Play">
-            <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.4 1.2C2 1.6 2 2.2 2 3v14c0 .8 0 1.4.4 1.8L2.5 19l7.8-7.8v-.2L2.5 3l-.1.2zM16.3 13.7l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.8-.1-.1zM2.5 18.9c.3.3.8.3 1.3 0L13.6 13l-2.7-2.7-8.4 8.5.1.1zM3.8 1.1L13.6 7 10.9 9.7 3.8 2.4V1.4l.1-.3z"/></svg>
+            <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.4 1.2C2 1.6 2 2.2 2 3v14c0 .8 0 1.4.4 1.8L2.5 19l7.8-7.8v-.2L2.5 3l-.1.2zM16.3 13.7l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.8-.1-.1zM2.5 18.9c.3.3.8.3 1.3 0L13.6 13l-2.7-2.7-8.4 8.5.1.1zM3.8 1.1L13.6 7 10.9 9.7 3.8 2.4V1.4l.1-.3z"/></svg>
             <div class="btn-store-text"><span class="sup">Get it on</span><span class="main">Google Play</span></div>
           </a>
         </div>
@@ -485,7 +376,6 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     </div>
   </div>
 </section>
-
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-copy">&copy; 2025 Docaro. All rights reserved.</span>
@@ -495,6 +385,5 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     </div>
   </div>
 </footer>
-
 </body>
 </html>
