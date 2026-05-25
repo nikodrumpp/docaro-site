@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PitLog — Your Car's Full History. Built by AI.</title>
+<title>PitLog — Your Car’s Full History. Built by AI.</title>
 <style>
 
 :root {
@@ -44,9 +44,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-
 body {
   background-color: var(--bg-base);
   color: var(--text-primary);
@@ -63,7 +61,6 @@ body {
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
-
 .t-h1 {
   font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 48px);
@@ -71,7 +68,6 @@ body {
   line-height: 1.1;
   letter-spacing: -0.025em;
 }
-
 .t-h3 {
   font-family: var(--font-display);
   font-size: 18px;
@@ -79,13 +75,7 @@ body {
   line-height: 1.3;
   letter-spacing: -0.01em;
 }
-
-.t-body-sm {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-}
-
+.t-body-sm { font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
 .t-label {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -94,7 +84,6 @@ body {
   text-transform: uppercase;
   color: var(--accent);
 }
-
 .t-sub {
   font-size: clamp(17px, 2vw, 21px);
   line-height: 1.55;
@@ -102,14 +91,8 @@ body {
   max-width: var(--text-width);
 }
 
-.container {
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-
+.container { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); }
 .section { padding: var(--space-4xl) 0; }
-
 .section-header {
   text-align: center;
   margin-bottom: var(--space-3xl);
@@ -118,9 +101,9 @@ body {
   align-items: center;
   gap: var(--space-md);
 }
-
 .section-divider { width: 100%; height: 1px; background: var(--border-subtle); }
 
+/* NAV */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -130,376 +113,271 @@ body {
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--border-subtle);
 }
-
 .nav-inner {
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg);
+  height: 56px; display: flex; align-items: center; justify-content: space-between;
 }
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  text-decoration: none;
-}
-
+.nav-logo { display: flex; align-items: center; gap: var(--space-sm); text-decoration: none; }
 .nav-logo-mark {
-  width: 28px; height: 28px;
-  border-radius: 7px;
+  width: 28px; height: 28px; border-radius: 7px;
   background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
 }
-
 .nav-logo-text {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--text-primary);
+  font-family: var(--font-display); font-size: 17px; font-weight: 600;
+  letter-spacing: -0.01em; color: var(--text-primary);
 }
-
 .nav-cta {
-  padding: 8px 18px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: opacity 0.15s;
+  padding: 8px 18px; background: var(--accent); color: #fff;
+  font-size: 14px; font-weight: 500; border-radius: 20px;
+  text-decoration: none; transition: opacity 0.15s;
 }
 .nav-cta:hover { opacity: 0.88; }
 
+/* HERO */
 .hero {
   padding-top: calc(56px + var(--space-4xl));
   padding-bottom: var(--space-4xl);
   min-height: 100svh;
-  display: flex;
-  align-items: center;
+  display: flex; align-items: center;
 }
-
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl); align-items: center;
 }
-
 .hero-content { display: flex; flex-direction: column; gap: var(--space-lg); }
-
 .hero-headline { display: flex; flex-direction: column; gap: var(--space-md); }
 .hero-headline .t-label { align-self: flex-start; }
-
 .hero-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-sm);
+  display: flex; flex-direction: column;
+  align-items: flex-start; gap: var(--space-sm);
   margin-top: var(--space-xs);
 }
-
 .hero-visual { display: flex; align-items: center; justify-content: center; }
 
 .visual-placeholder {
-  width: 100%;
-  aspect-ratio: 1;
-  max-width: 440px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
+  width: 100%; aspect-ratio: 1; max-width: 440px;
+  background: var(--bg-card); border: 1px solid var(--border-card);
   border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
 }
-
 .placeholder-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-tertiary);
-  letter-spacing: 0.08em;
-  text-align: center;
-  padding: 0 var(--space-lg);
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--text-tertiary); letter-spacing: 0.08em;
+  text-align: center; padding: 0 var(--space-lg);
 }
 
-.btn-appstore {
+/* ============================================
+   STORE BUTTONS — scalable system
+   To add a new marketplace: copy .btn-store block,
+   change .primary to .secondary, update icon + text.
+   ============================================ */
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.store-actions.centered { justify-content: center; }
+
+.btn-store {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 13px 24px;
+  padding: 11px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.btn-store:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-store:active { transform: translateY(0); opacity: 1; }
+
+.btn-store.primary {
   background: var(--text-primary);
   color: var(--bg-base);
-  border-radius: 14px;
-  text-decoration: none;
-  transition: opacity 0.15s, transform 0.15s;
 }
-.btn-appstore:hover { opacity: 0.9; transform: translateY(-1px); }
-.btn-appstore:active { transform: translateY(0); }
-.btn-appstore-icon { width: 20px; height: 20px; flex-shrink: 0; }
-.btn-appstore-text { display: flex; flex-direction: column; line-height: 1.1; }
-.btn-appstore-text span:first-child { font-size: 10px; font-weight: 400; letter-spacing: 0.04em; opacity: 0.7; }
-.btn-appstore-text span:last-child { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+.btn-store.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.btn-store.secondary:hover { border-color: rgba(255, 255, 255, 0.35); }
+
+.btn-store-icon { width: 18px; height: 18px; flex-shrink: 0; }
+.btn-store-text { display: flex; flex-direction: column; line-height: 1.15; }
+.btn-store-text .sup { font-size: 9px; font-weight: 400; letter-spacing: 0.05em; opacity: 0.65; }
+.btn-store-text .main { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+
 .supporting-line { font-size: 13px; color: var(--text-tertiary); }
 
+/* PROBLEM */
 .problem { background: var(--bg-surface); }
-
-.problem-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-}
-
+.problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
 .problem-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+  background: var(--bg-card); border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg); padding: var(--space-xl);
+  display: flex; flex-direction: column; gap: var(--space-md);
   transition: border-color 0.2s;
 }
 .problem-card:hover { border-color: var(--border-accent); }
-
 .problem-card-icon {
-  width: 52px; height: 52px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-card);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 52px; height: 52px; border-radius: var(--radius-sm);
+  background: var(--bg-elevated); border: 1px solid var(--border-card);
+  display: flex; align-items: center; justify-content: center;
 }
 .problem-card-icon .placeholder-label { font-size: 9px; padding: 0 4px; }
 .problem-card-content { display: flex; flex-direction: column; gap: var(--space-sm); }
 
+/* SOLUTION */
 .solution-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-  position: relative;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg); position: relative;
 }
 .solution-steps::before {
-  content: '';
-  position: absolute;
-  top: 28px;
-  left: calc(16.66% + 28px);
-  right: calc(16.66% + 28px);
+  content: ''; position: absolute;
+  top: 28px; left: calc(16.66% + 28px); right: calc(16.66% + 28px);
   height: 1px;
   background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 33%, var(--border-card) 33%, var(--border-card) 100%);
   z-index: 0;
 }
 .solution-step {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  align-items: flex-start;
-  position: relative;
-  z-index: 1;
+  display: flex; flex-direction: column; gap: var(--space-md);
+  align-items: flex-start; position: relative; z-index: 1;
 }
 .step-number {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
-  flex-shrink: 0;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 20px; font-weight: 700; flex-shrink: 0;
 }
 .step-number.active { background: var(--accent); color: #fff; }
 .step-number.inactive { background: var(--bg-card); border: 1px solid var(--border-card); color: var(--text-tertiary); }
 .step-content { display: flex; flex-direction: column; gap: var(--space-xs); }
 .solution-visual {
   margin-top: var(--space-3xl);
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--bg-card); border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl); height: 200px;
+  display: flex; align-items: center; justify-content: center;
 }
 
+/* FEATURES */
 .features { background: var(--bg-surface); }
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-}
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
 .feature-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
+  background: var(--bg-card); border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg); padding: var(--space-xl);
+  display: flex; flex-direction: column; gap: var(--space-lg);
   transition: border-color 0.2s, background 0.2s;
 }
 .feature-card:hover { background: var(--bg-card-hover); border-color: var(--border-accent); }
 .feature-card-visual {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-card);
+  width: 100%; aspect-ratio: 4/3;
+  background: var(--bg-elevated); border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
 }
 .feature-card-content { display: flex; flex-direction: column; gap: var(--space-xs); }
 
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-}
+/* WHY PITLOG */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
 .why-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s;
+  background: var(--bg-card); border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg); padding: var(--space-xl);
+  display: flex; flex-direction: column; gap: var(--space-lg);
+  position: relative; overflow: hidden; transition: border-color 0.2s;
 }
 .why-card:first-child { border-color: var(--accent-border); }
 .why-card:first-child::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; bottom: 0;
-  width: 3px;
-  background: var(--accent);
+  content: ''; position: absolute; top: 0; left: 0; bottom: 0;
+  width: 3px; background: var(--accent);
 }
 .why-card:hover { border-color: var(--border-accent); }
 .why-card-icon {
-  width: 56px; height: 56px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-card);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 56px; height: 56px; border-radius: var(--radius-sm);
+  background: var(--bg-elevated); border: 1px solid var(--border-card);
+  display: flex; align-items: center; justify-content: center;
 }
 .why-card-content { display: flex; flex-direction: column; gap: var(--space-sm); }
 
+/* PRICING */
 .pricing { background: var(--bg-surface); }
 .pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  max-width: 780px;
-  margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg); max-width: 780px; margin: 0 auto;
 }
 .pricing-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
-  padding: var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
+  background: var(--bg-card); border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl); padding: var(--space-xl);
+  display: flex; flex-direction: column; gap: var(--space-lg);
 }
 .pricing-card.pricing-pro {
-  border-color: var(--accent-border);
-  background: var(--bg-elevated);
-  position: relative;
+  border-color: var(--accent-border); background: var(--bg-elevated); position: relative;
 }
 .pricing-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  align-self: flex-start;
+  display: inline-flex; align-items: center; padding: 4px 12px;
+  border-radius: 20px; font-size: 12px; font-weight: 500;
+  letter-spacing: 0.04em; align-self: flex-start;
 }
 .pricing-badge.free { background: var(--bg-elevated); color: var(--text-secondary); border: 1px solid var(--border-card); }
 .pricing-badge.pro { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); }
 .pricing-popular {
-  position: absolute;
-  top: -1px; right: var(--space-xl);
-  padding: 4px 14px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  position: absolute; top: -1px; right: var(--space-xl);
+  padding: 4px 14px; background: var(--accent); color: #fff;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 .pricing-price { display: flex; flex-direction: column; gap: 2px; }
 .pricing-amount {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: var(--text-primary);
-  line-height: 1;
+  font-family: var(--font-display); font-size: 48px; font-weight: 700;
+  letter-spacing: -0.04em; color: var(--text-primary); line-height: 1;
 }
 .pricing-period { font-size: 15px; color: var(--text-secondary); }
 .pricing-subline { font-size: 13px; color: var(--text-tertiary); }
 .pricing-features { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); flex: 1; }
 .pricing-features li { display: flex; align-items: center; gap: var(--space-sm); font-size: 15px; color: var(--text-secondary); }
-.pricing-features li .check { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.pricing-features li .check {
+  width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
 .pricing-features li .check.accent { background: var(--accent-dim); color: var(--accent); }
 .pricing-features li .check.muted { background: var(--bg-elevated); color: var(--text-tertiary); }
 .pricing-cta { display: flex; flex-direction: column; gap: var(--space-sm); }
 
 .btn-primary {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 14px 24px;
-  background: var(--accent); color: #fff;
-  font-size: 16px; font-weight: 500;
-  border-radius: 14px; text-decoration: none; border: none; cursor: pointer;
+  padding: 14px 24px; background: var(--accent); color: #fff;
+  font-size: 16px; font-weight: 500; border-radius: 14px;
+  text-decoration: none; border: none; cursor: pointer;
   transition: opacity 0.15s, transform 0.15s;
   width: 100%; text-align: center;
 }
 .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-
 .btn-secondary {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 14px 24px;
-  background: transparent; color: var(--text-secondary);
-  font-size: 16px; font-weight: 500;
-  border-radius: 14px; text-decoration: none; border: 1px solid var(--border-card); cursor: pointer;
+  padding: 14px 24px; background: transparent; color: var(--text-secondary);
+  font-size: 16px; font-weight: 500; border-radius: 14px;
+  text-decoration: none; border: 1px solid var(--border-card); cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
   width: 100%; text-align: center;
 }
 .btn-secondary:hover { border-color: var(--border-accent); color: var(--text-primary); }
 .cancel-line { font-size: 12px; color: var(--text-tertiary); text-align: center; }
 
+/* FINAL CTA */
 .final-cta {
-  text-align: center;
-  padding: var(--space-4xl) 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-xl);
+  text-align: center; padding: var(--space-4xl) 0;
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-xl);
 }
 .final-cta .t-h1 { max-width: var(--text-width); margin: 0 auto; }
 .final-cta-actions { display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
 .final-visual {
   width: 100%; max-width: 440px; height: 140px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
+  background: var(--bg-card); border: 1px solid var(--border-card);
   border-radius: var(--radius-xl);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto;
 }
 
+/* FOOTER */
 .footer { border-top: 1px solid var(--border-subtle); padding: var(--space-xl) 0; }
 .footer-inner {
   max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg);
@@ -507,10 +385,11 @@ body {
 }
 .footer-copy { font-size: 13px; color: var(--text-tertiary); }
 
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: var(--space-xl); }
   .hero-visual { order: -1; }
-  .hero-actions { align-items: center; }
+  .hero-actions, .store-actions { align-items: center; }
   .hero-content { text-align: center; align-items: center; }
   .hero-headline .t-label { align-self: center; }
   .problem-grid, .features-grid, .why-grid { grid-template-columns: 1fr; }
@@ -522,11 +401,15 @@ body {
   .section { padding: var(--space-3xl) 0; }
   .nav-inner, .container { padding: 0 var(--space-md); }
   .footer-inner { flex-direction: column; gap: var(--space-sm); text-align: center; }
+  .btn-store { width: 100%; justify-content: center; }
+  .store-actions { flex-direction: column; align-items: stretch; }
+  .store-actions.centered { align-items: center; }
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
@@ -544,6 +427,7 @@ body {
   </div>
 </nav>
 
+<!-- 1. HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
@@ -554,13 +438,37 @@ body {
         </div>
         <p class="t-sub">Snap a receipt — PitLog logs it instantly. Service history, reminders, and expenses. Always with you.</p>
         <div class="hero-actions">
-          <a href="#" class="btn-appstore">
-            <svg class="btn-appstore-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/></svg>
-            <div class="btn-appstore-text">
-              <span>Download on the</span>
-              <span>App Store</span>
-            </div>
-          </a>
+          <div class="store-actions">
+            <!-- App Store: primary -->
+            <a href="#" class="btn-store primary">
+              <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/>
+              </svg>
+              <div class="btn-store-text">
+                <span class="sup">Download on the</span>
+                <span class="main">App Store</span>
+              </div>
+            </a>
+            <!-- Google Play: secondary -->
+            <a href="#" class="btn-store secondary">
+              <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.4 1.2C2 1.6 2 2.2 2 3v14c0 .8 0 1.4.4 1.8L2.5 19l7.8-7.8v-.2L2.5 3l-.1.2zM16.3 13.7l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.8-.1-.1zM2.5 18.9c.3.3.8.3 1.3 0L13.6 13l-2.7-2.7-8.4 8.5.1.1zM3.8 1.1L13.6 7 10.9 9.7 3.8 2.4V1.4l.1-.3z"/>
+              </svg>
+              <div class="btn-store-text">
+                <span class="sup">Get it on</span>
+                <span class="main">Google Play</span>
+              </div>
+            </a>
+            <!-- NEW MARKETPLACE TEMPLATE (commented out, ready to activate):
+            <a href="#" class="btn-store secondary">
+              <svg class="btn-store-icon" ...></svg>
+              <div class="btn-store-text">
+                <span class="sup">Available on</span>
+                <span class="main">Marketplace Name</span>
+              </div>
+            </a>
+            -->
+          </div>
           <span class="supporting-line">Free to start. No credit card required.</span>
         </div>
       </div>
@@ -575,6 +483,7 @@ body {
 
 <div class="section-divider"></div>
 
+<!-- 2. PROBLEM -->
 <section class="section problem">
   <div class="container">
     <div class="section-header">
@@ -608,6 +517,7 @@ body {
 
 <div class="section-divider"></div>
 
+<!-- 3. SOLUTION -->
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -646,6 +556,7 @@ body {
 
 <div class="section-divider"></div>
 
+<!-- 4. FEATURES -->
 <section class="section features">
   <div class="container">
     <div class="section-header">
@@ -701,6 +612,7 @@ body {
 
 <div class="section-divider"></div>
 
+<!-- 5. WHY PITLOG -->
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -735,6 +647,7 @@ body {
 
 <div class="section-divider"></div>
 
+<!-- 6. PRICING -->
 <section class="section pricing">
   <div class="container">
     <div class="section-header">
@@ -786,6 +699,7 @@ body {
 
 <div class="section-divider"></div>
 
+<!-- 7. FINAL CTA -->
 <section class="section">
   <div class="container">
     <div class="final-cta">
@@ -795,19 +709,35 @@ body {
       <h2 class="t-h1">Your car deserves better than a shoebox.</h2>
       <p class="t-sub" style="text-align:center">Start building your car’s service history today. Free, forever — or go Pro and let AI do the work.</p>
       <div class="final-cta-actions">
-        <a href="#" class="btn-appstore">
-          <svg class="btn-appstore-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/></svg>
-          <div class="btn-appstore-text">
-            <span>Download on the</span>
-            <span>App Store</span>
-          </div>
-        </a>
+        <div class="store-actions centered">
+          <!-- App Store: primary -->
+          <a href="#" class="btn-store primary">
+            <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/>
+            </svg>
+            <div class="btn-store-text">
+              <span class="sup">Download on the</span>
+              <span class="main">App Store</span>
+            </div>
+          </a>
+          <!-- Google Play: secondary -->
+          <a href="#" class="btn-store secondary">
+            <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.4 1.2C2 1.6 2 2.2 2 3v14c0 .8 0 1.4.4 1.8L2.5 19l7.8-7.8v-.2L2.5 3l-.1.2zM16.3 13.7l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.8-.1-.1zM2.5 18.9c.3.3.8.3 1.3 0L13.6 13l-2.7-2.7-8.4 8.5.1.1zM3.8 1.1L13.6 7 10.9 9.7 3.8 2.4V1.4l.1-.3z"/>
+            </svg>
+            <div class="btn-store-text">
+              <span class="sup">Get it on</span>
+              <span class="main">Google Play</span>
+            </div>
+          </a>
+        </div>
         <span class="supporting-line">Free to start. No credit card required.</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-copy">&copy; 2025 PitLog. All rights reserved.</span>
