@@ -87,6 +87,10 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 .problem-card-visual { width: 100%; aspect-ratio: 16/9; overflow: hidden; line-height: 0; }
 .problem-card-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .problem-card-content { padding: var(--space-lg) var(--space-xl) var(--space-xl); display: flex; flex-direction: column; gap: var(--space-sm); }
+.problem-card-label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; }
+.problem-card-label.amber { color: #F59E0B; opacity: 0.8; }
+.problem-card-label.red   { color: #EF4444; opacity: 0.8; }
+.problem-card-label.gray  { color: #8E8E93; opacity: 0.7; }
 
 /* SOLUTION */
 .solution-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); position: relative; }
@@ -231,6 +235,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
       <div class="problem-card">
         <div class="problem-card-visual"><img src="assets/icons/problem_receipt_dark.svg" alt="" loading="lazy"/></div>
         <div class="problem-card-content">
+          <span class="problem-card-label amber">Receipts Lost</span>
           <h3 class="t-h3">Receipts pile up. Then disappear.</h3>
           <p class="t-body-sm">Oil change, tires, brakes — you paid for it. But where's the proof?</p>
         </div>
@@ -238,6 +243,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
       <div class="problem-card">
         <div class="problem-card-visual"><img src="assets/icons/problem_calendar_dark.svg" alt="" loading="lazy"/></div>
         <div class="problem-card-content">
+          <span class="problem-card-label red">Overdue</span>
           <h3 class="t-h3">You missed the service date. Again.</h3>
           <p class="t-body-sm">No reminder. No record. Just a warning light you didn't expect.</p>
         </div>
@@ -245,6 +251,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
       <div class="problem-card">
         <div class="problem-card-visual"><img src="assets/icons/problem_question_dark.svg" alt="" loading="lazy"/></div>
         <div class="problem-card-content">
+          <span class="problem-card-label gray">No Proof</span>
           <h3 class="t-h3">Selling your vehicle? You can't prove anything.</h3>
           <p class="t-body-sm">Buyers want service history. You have a shoebox full of paper receipts. Maybe.</p>
         </div>
