@@ -113,7 +113,6 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 .why-card:first-child { border-color: var(--accent-border); }
 .why-card:first-child::before { content:''; position: absolute; top:0; left:0; bottom:0; width:3px; background: var(--accent); z-index: 1; }
 .why-card:hover { border-color: var(--border-accent); }
-/* Фиксированный aspect-ratio — все иллюстрации одного размера независимо от viewBox */
 .why-card-visual { width: 100%; aspect-ratio: 16/9; overflow: hidden; line-height: 0; }
 .why-card-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .why-card-content { padding: var(--space-lg) var(--space-xl) var(--space-xl); display: flex; flex-direction: column; gap: var(--space-sm); }
@@ -334,7 +333,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     </div>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-card-visual"><img src="assets/icons/ai_scan_dark.svg" alt="" loading="lazy"/></div>
+        <div class="why-card-visual"><img src="assets/icons/why_ai_scan_dark.svg" alt="" loading="lazy"/></div>
         <div class="why-card-content">
           <h3 class="t-h3">Snap a photo — AI does the rest</h3>
           <p class="t-body-sm">No typing. No manual forms. Point your camera at any receipt and Docaro creates the record automatically. Seconds, not minutes.</p>
