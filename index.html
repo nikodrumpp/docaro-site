@@ -15,9 +15,6 @@
   --accent:         #0A84FF;
   --accent-dim:     rgba(10, 132, 255, 0.12);
   --accent-border:  rgba(10, 132, 255, 0.30);
-  --green:          #34D399;
-  --violet:         #A78BFA;
-  --amber:          #F59E0B;
   --text-primary:   #F5F5F7;
   --text-secondary: #8E8E93;
   --text-tertiary:  #48484A;
@@ -27,165 +24,51 @@
   --font-display: 'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif;
   --font-text:    'SF Pro Text',    -apple-system, 'Helvetica Neue', sans-serif;
   --font-mono:    'SF Mono', 'Fira Code', monospace;
-  --space-xs:   4px;
-  --space-sm:   8px;
-  --space-md:   16px;
-  --space-lg:   24px;
-  --space-xl:   40px;
-  --space-2xl:  64px;
-  --space-3xl:  96px;
-  --space-4xl:  128px;
-  --radius-sm:  8px;
-  --radius-md:  12px;
-  --radius-lg:  16px;
-  --radius-xl:  24px;
-  --content-width: 1100px;
-  --text-width:    680px;
+  --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px;
+  --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 128px;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
+  --content-width: 1100px; --text-width: 680px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body {
-  background-color: var(--bg-base);
-  color: var(--text-primary);
-  font-family: var(--font-text);
-  font-size: 17px;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+body { background-color: var(--bg-base); color: var(--text-primary); font-family: var(--font-text); font-size: 17px; line-height: 1.6; overflow-x: hidden; }
 
-.t-display {
-  font-family: var(--font-display);
-  font-size: clamp(40px, 6vw, 72px);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-}
-.t-h1 {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-}
-.t-h3 {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
+.t-display { font-family: var(--font-display); font-size: clamp(40px, 6vw, 72px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; }
+.t-h1 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; }
+.t-h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
 .t-body-sm { font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
-.t-label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.t-sub {
-  font-size: clamp(17px, 2vw, 21px);
-  line-height: 1.55;
-  color: var(--text-secondary);
-  max-width: var(--text-width);
-}
+.t-label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.t-sub { font-size: clamp(17px, 2vw, 21px); line-height: 1.55; color: var(--text-secondary); max-width: var(--text-width); }
 
 .container { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); }
 .section { padding: var(--space-4xl) 0; }
-.section-header {
-  text-align: center;
-  margin-bottom: var(--space-3xl);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-}
+.section-header { text-align: center; margin-bottom: var(--space-3xl); display: flex; flex-direction: column; align-items: center; gap: var(--space-md); }
 .section-divider { width: 100%; height: 1px; background: var(--border-subtle); }
 
-/* NAV */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(8, 8, 16, 0.72);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid var(--border-subtle);
-}
-.nav-inner {
-  max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg);
-  height: 56px; display: flex; align-items: center; justify-content: space-between;
-}
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.72); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border-subtle); }
+.nav-inner { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); height: 56px; display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { display: flex; align-items: center; gap: var(--space-sm); text-decoration: none; }
-.nav-logo-mark {
-  width: 28px; height: 28px; border-radius: 7px;
-  background: var(--accent);
-  display: flex; align-items: center; justify-content: center;
-}
-.nav-logo-text {
-  font-family: var(--font-display); font-size: 17px; font-weight: 600;
-  letter-spacing: -0.01em; color: var(--text-primary);
-}
-.nav-cta {
-  padding: 8px 18px; background: var(--accent); color: #fff;
-  font-size: 14px; font-weight: 500; border-radius: 20px;
-  text-decoration: none; transition: opacity 0.15s;
-}
+.nav-logo-mark { width: 28px; height: 28px; border-radius: 7px; background: var(--accent); display: flex; align-items: center; justify-content: center; }
+.nav-logo-text { font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); }
+.nav-cta { padding: 8px 18px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; border-radius: 20px; text-decoration: none; transition: opacity 0.15s; }
 .nav-cta:hover { opacity: 0.88; }
 
-/* HERO */
-.hero {
-  padding-top: calc(56px + var(--space-4xl));
-  padding-bottom: var(--space-4xl);
-  min-height: 100svh;
-  display: flex; align-items: center;
-}
-.hero-inner {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl); align-items: center;
-}
+.hero { padding-top: calc(56px + var(--space-4xl)); padding-bottom: var(--space-4xl); min-height: 100svh; display: flex; align-items: center; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; }
 .hero-content { display: flex; flex-direction: column; gap: var(--space-lg); }
 .hero-headline { display: flex; flex-direction: column; gap: var(--space-md); }
 .hero-headline .t-label { align-self: flex-start; }
-.hero-actions {
-  display: flex; flex-direction: column;
-  align-items: flex-start; gap: var(--space-sm);
-  margin-top: var(--space-xs);
-}
+.hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-sm); margin-top: var(--space-xs); }
 .hero-visual { display: flex; align-items: center; justify-content: center; }
-
-.hero-svg-wrap {
-  width: 100%;
-  max-width: 480px;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-}
+.hero-svg-wrap { width: 100%; max-width: 480px; border-radius: var(--radius-xl); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-card); }
 .hero-svg-wrap img { width: 100%; height: auto; display: block; }
 
-.visual-placeholder {
-  width: 100%; aspect-ratio: 1; max-width: 440px;
-  background: var(--bg-card); border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
-  display: flex; align-items: center; justify-content: center;
-}
-.placeholder-label {
-  font-family: var(--font-mono); font-size: 11px;
-  color: var(--text-tertiary); letter-spacing: 0.08em;
-  text-align: center; padding: 0 var(--space-lg);
-}
+.placeholder-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.08em; text-align: center; padding: 0 var(--space-lg); }
 
-/* STORE BUTTONS */
 .store-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .store-actions.centered { justify-content: center; }
-.btn-store {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 11px 20px; border-radius: 12px;
-  text-decoration: none; flex-shrink: 0;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
+.btn-store { display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; border-radius: 12px; text-decoration: none; flex-shrink: 0; transition: opacity 0.15s ease, transform 0.15s ease; }
 .btn-store:hover { opacity: 0.88; transform: translateY(-1px); }
 .btn-store:active { transform: translateY(0); opacity: 1; }
 .btn-store.primary { background: var(--text-primary); color: var(--bg-base); }
@@ -197,95 +80,45 @@ body {
 .btn-store-text .main { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
 .supporting-line { font-size: 13px; color: var(--text-tertiary); }
 
-/* PROBLEM */
 .problem { background: var(--bg-surface); }
 .problem-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
-.problem-card {
-  background: var(--bg-card); border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg); padding: var(--space-xl);
-  display: flex; flex-direction: column; gap: var(--space-md); transition: border-color 0.2s;
-}
+.problem-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-md); transition: border-color 0.2s; }
 .problem-card:hover { border-color: var(--border-accent); }
-.problem-card-icon {
-  width: 52px; height: 52px; border-radius: var(--radius-sm);
-  background: var(--bg-elevated); border: 1px solid var(--border-card);
-  display: flex; align-items: center; justify-content: center;
-}
-.problem-card-icon .placeholder-label { font-size: 9px; padding: 0 4px; }
+.problem-card-icon { width: 52px; height: 52px; border-radius: var(--radius-sm); background: var(--bg-elevated); border: 1px solid var(--border-card); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.problem-card-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .problem-card-content { display: flex; flex-direction: column; gap: var(--space-sm); }
 
-/* SOLUTION */
 .solution-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); position: relative; }
-.solution-steps::before {
-  content:''; position: absolute; top: 28px;
-  left: calc(16.66% + 28px); right: calc(16.66% + 28px); height: 1px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 33%, var(--border-card) 33%, var(--border-card) 100%);
-  z-index: 0;
-}
+.solution-steps::before { content:''; position: absolute; top: 28px; left: calc(16.66% + 28px); right: calc(16.66% + 28px); height: 1px; background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 33%, var(--border-card) 33%, var(--border-card) 100%); z-index: 0; }
 .solution-step { display: flex; flex-direction: column; gap: var(--space-md); align-items: flex-start; position: relative; z-index: 1; }
-.step-number {
-  width: 56px; height: 56px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-size: 20px; font-weight: 700; flex-shrink: 0;
-}
+.step-number { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 20px; font-weight: 700; flex-shrink: 0; }
 .step-number.active { background: var(--accent); color: #fff; }
 .step-number.inactive { background: var(--bg-card); border: 1px solid var(--border-card); color: var(--text-tertiary); }
 .step-content { display: flex; flex-direction: column; gap: var(--space-xs); }
-.solution-visual {
-  margin-top: var(--space-3xl);
-  background: var(--bg-card); border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl); height: 200px;
-  display: flex; align-items: center; justify-content: center;
-}
+.solution-visual { margin-top: var(--space-3xl); background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); height: 200px; display: flex; align-items: center; justify-content: center; }
 
-/* FEATURES */
 .features { background: var(--bg-surface); }
 .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-md); }
-.feature-card {
-  background: var(--bg-card); border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg); padding: var(--space-xl);
-  display: flex; flex-direction: column; gap: var(--space-lg); transition: border-color 0.2s, background 0.2s;
-}
+.feature-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg); transition: border-color 0.2s, background 0.2s; }
 .feature-card:hover { background: var(--bg-card-hover); border-color: var(--border-accent); }
-.feature-card-visual {
-  width: 100%; aspect-ratio: 4/3;
-  background: var(--bg-elevated); border: 1px solid var(--border-card);
-  border-radius: var(--radius-md); overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-}
+.feature-card-visual { width: 100%; aspect-ratio: 4/3; background: var(--bg-elevated); border: 1px solid var(--border-card); border-radius: var(--radius-md); overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .feature-card-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .feature-card-content { display: flex; flex-direction: column; gap: var(--space-xs); }
 
-/* WHY DOCARO */
 .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
-.why-card {
-  background: var(--bg-card); border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg); padding: var(--space-xl);
-  display: flex; flex-direction: column; gap: var(--space-lg);
-  position: relative; overflow: hidden; transition: border-color 0.2s;
-}
+.why-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg); position: relative; overflow: hidden; transition: border-color 0.2s; }
 .why-card:first-child { border-color: var(--accent-border); }
 .why-card:first-child::before { content:''; position: absolute; top:0; left:0; bottom:0; width:3px; background: var(--accent); }
 .why-card:hover { border-color: var(--border-accent); }
-.why-card-icon {
-  width: 100%; border-radius: var(--radius-md);
-  background: var(--bg-elevated); border: 1px solid var(--border-card);
-  overflow: hidden; aspect-ratio: 16/9;
-  display: flex; align-items: center; justify-content: center;
-}
-.why-card-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.why-card-icon.small { width: 56px; height: 56px; border-radius: var(--radius-sm); aspect-ratio: 1; }
-.why-card-icon.small .placeholder-label { font-size: 9px; }
+.why-card-icon-lg { width: 100%; border-radius: var(--radius-md); background: var(--bg-elevated); border: 1px solid var(--border-card); overflow: hidden; aspect-ratio: 16/9; }
+.why-card-icon-lg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.why-card-icon-sm { width: 56px; height: 56px; border-radius: var(--radius-sm); background: var(--bg-elevated); border: 1px solid var(--border-card); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.why-card-icon-sm img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .why-card-content { display: flex; flex-direction: column; gap: var(--space-sm); }
 
-/* PRICING */
 .pricing { background: var(--bg-surface); }
 .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); max-width: 780px; margin: 0 auto; }
-.pricing-card {
-  background: var(--bg-card); border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl); padding: var(--space-xl);
-  display: flex; flex-direction: column; gap: var(--space-lg);
-}
+.pricing-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg); }
 .pricing-card.pricing-pro { border-color: var(--accent-border); background: var(--bg-elevated); position: relative; }
 .pricing-badge { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; align-self: flex-start; }
 .pricing-badge.free { background: var(--bg-elevated); color: var(--text-secondary); border: 1px solid var(--border-card); }
@@ -308,18 +141,16 @@ body {
 .btn-secondary:hover { border-color: var(--border-accent); color: var(--text-primary); }
 .cancel-line { font-size: 12px; color: var(--text-tertiary); text-align: center; }
 
-/* FINAL CTA */
 .final-cta { text-align: center; padding: var(--space-4xl) 0; display: flex; flex-direction: column; align-items: center; gap: var(--space-xl); }
 .final-cta .t-h1 { max-width: var(--text-width); margin: 0 auto; }
 .final-cta-actions { display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
-.final-visual { width:100%; max-width:440px; height:140px; background: var(--bg-card); border:1px solid var(--border-card); border-radius: var(--radius-xl); display:flex; align-items:center; justify-content:center; margin:0 auto; }
+.final-visual { width:100%; max-width:880px; border-radius: var(--radius-xl); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border-card); margin: 0 auto; }
+.final-visual img { width: 100%; height: auto; display: block; }
 
-/* FOOTER */
 .footer { border-top: 1px solid var(--border-subtle); padding: var(--space-xl) 0; }
 .footer-inner { max-width: var(--content-width); margin:0 auto; padding: 0 var(--space-lg); display:flex; align-items:center; justify-content:space-between; }
 .footer-copy { font-size: 13px; color: var(--text-tertiary); }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: var(--space-xl); }
   .hero-visual { order: -1; }
@@ -361,7 +192,6 @@ body {
   </div>
 </nav>
 
-<!-- 1. HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
@@ -396,27 +226,32 @@ body {
 
 <div class="section-divider"></div>
 
-<!-- 2. PROBLEM -->
 <section class="section problem">
   <div class="container">
     <div class="section-header"><h2 class="t-h1">Sound familiar?</h2></div>
     <div class="problem-grid">
       <div class="problem-card">
-        <div class="problem-card-icon"><span class="placeholder-label">[ICON: Crumpled receipt]</span></div>
+        <div class="problem-card-icon">
+          <img src="assets/icons/problem_receipt_dark.svg" alt="" loading="lazy"/>
+        </div>
         <div class="problem-card-content">
           <h3 class="t-h3">Receipts pile up. Then disappear.</h3>
           <p class="t-body-sm">Oil change, tires, brakes — you paid for it. But where’s the proof?</p>
         </div>
       </div>
       <div class="problem-card">
-        <div class="problem-card-icon"><span class="placeholder-label">[ICON: Calendar with cross]</span></div>
+        <div class="problem-card-icon">
+          <img src="assets/icons/problem_calendar_dark.svg" alt="" loading="lazy"/>
+        </div>
         <div class="problem-card-content">
           <h3 class="t-h3">You missed the service date. Again.</h3>
           <p class="t-body-sm">No reminder. No record. Just a warning light you didn’t expect.</p>
         </div>
       </div>
       <div class="problem-card">
-        <div class="problem-card-icon"><span class="placeholder-label">[ICON: Question mark above car]</span></div>
+        <div class="problem-card-icon">
+          <img src="assets/icons/problem_question_dark.svg" alt="" loading="lazy"/>
+        </div>
         <div class="problem-card-content">
           <h3 class="t-h3">Selling your vehicle? You can’t prove anything.</h3>
           <p class="t-body-sm">Buyers want service history. You have a shoebox full of paper receipts. Maybe.</p>
@@ -428,7 +263,6 @@ body {
 
 <div class="section-divider"></div>
 
-<!-- 3. SOLUTION -->
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -450,13 +284,14 @@ body {
         <div class="step-content"><h3 class="t-h3">Your history grows</h3><p class="t-body-sm">Every record saved, sorted, and searchable. Forever.</p></div>
       </div>
     </div>
-    <div class="solution-visual"><span class="placeholder-label">[VISUAL: 3-step flow]</span></div>
+    <div class="solution-visual">
+      <img src="assets/icons/ai_scan_dark.svg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+    </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- 4. FEATURES -->
 <section class="section features">
   <div class="container">
     <div class="section-header">
@@ -465,33 +300,39 @@ body {
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-card-visual"><span class="placeholder-label">[ICON: Service history list]</span></div>
+        <div class="feature-card-visual">
+          <img src="assets/icons/feature_history_dark.svg" alt="" loading="lazy"/>
+        </div>
         <div class="feature-card-content"><h3 class="t-h3">Full Service History</h3><p class="t-body-sm">Oil, tires, brakes, insurance, inspection — every record in one place. Always up to date.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-card-visual">
-          <img src="assets/icons/smart_reminders_dark.svg" alt="Smart Reminders" loading="lazy"/>
+          <img src="assets/icons/smart_reminders_dark.svg" alt="" loading="lazy"/>
         </div>
         <div class="feature-card-content"><h3 class="t-h3">Smart Reminders</h3><p class="t-body-sm">Set it once. Docaro reminds you before the next service date — so nothing slips through.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-card-visual">
-          <img src="assets/icons/unlimited_records_dark.svg" alt="Expense Tracking" loading="lazy"/>
+          <img src="assets/icons/unlimited_records_dark.svg" alt="" loading="lazy"/>
         </div>
         <div class="feature-card-content"><h3 class="t-h3">Expense Tracking</h3><p class="t-body-sm">See exactly how much your vehicle costs. Monthly, yearly, by category.</p></div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-visual"><span class="placeholder-label">[ICON: Multiple vehicles]</span></div>
+        <div class="feature-card-visual">
+          <img src="assets/icons/feature_multicar_dark.svg" alt="" loading="lazy"/>
+        </div>
         <div class="feature-card-content"><h3 class="t-h3">Multiple Vehicles</h3><p class="t-body-sm">Car, motorcycle, truck, boat — manage all of them in one account.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-card-visual">
-          <img src="assets/icons/pdf_export_dark.svg" alt="PDF Export" loading="lazy"/>
+          <img src="assets/icons/pdf_export_dark.svg" alt="" loading="lazy"/>
         </div>
         <div class="feature-card-content"><h3 class="t-h3">PDF Export</h3><p class="t-body-sm">Generate a clean service report in one tap. Ready to share with a buyer or mechanic.</p></div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-visual"><span class="placeholder-label">[ICON: Two figures + transfer arrow]</span></div>
+        <div class="feature-card-visual">
+          <img src="assets/icons/why_transfer_dark.svg" alt="" loading="lazy"/>
+        </div>
         <div class="feature-card-content"><h3 class="t-h3">History Transfer</h3><p class="t-body-sm">Selling your vehicle? Transfer the full service history to the new owner in one tap.</p></div>
       </div>
     </div>
@@ -500,7 +341,6 @@ body {
 
 <div class="section-divider"></div>
 
-<!-- 5. WHY DOCARO -->
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -509,8 +349,8 @@ body {
     </div>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-card-icon">
-          <img src="assets/icons/ai_scan_dark.svg" alt="AI receipt scanning" loading="lazy"/>
+        <div class="why-card-icon-lg">
+          <img src="assets/icons/ai_scan_dark.svg" alt="" loading="lazy"/>
         </div>
         <div class="why-card-content">
           <h3 class="t-h3">Snap a photo — AI does the rest</h3>
@@ -518,14 +358,18 @@ body {
         </div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon small"><span class="placeholder-label" style="font-size:9px">[ICON: Two figures + arrow]</span></div>
+        <div class="why-card-icon-sm">
+          <img src="assets/icons/why_transfer_dark.svg" alt="" loading="lazy"/>
+        </div>
         <div class="why-card-content">
           <h3 class="t-h3">Selling your vehicle? One tap to transfer</h3>
           <p class="t-body-sm">Your full service history transfers to the new owner instantly. No paperwork. No lost records. Just proof that your vehicle was cared for.</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-card-icon small"><span class="placeholder-label" style="font-size:9px">[ICON: Shield + lock]</span></div>
+        <div class="why-card-icon-sm">
+          <img src="assets/icons/why_privacy_dark.svg" alt="" loading="lazy"/>
+        </div>
         <div class="why-card-content">
           <h3 class="t-h3">Your data stays yours</h3>
           <p class="t-body-sm">No third-party access. No data selling. Your service history belongs to you — and only you.</p>
@@ -537,7 +381,6 @@ body {
 
 <div class="section-divider"></div>
 
-<!-- 6. PRICING -->
 <section class="section pricing">
   <div class="container">
     <div class="section-header">
@@ -584,11 +427,12 @@ body {
 
 <div class="section-divider"></div>
 
-<!-- 7. FINAL CTA -->
 <section class="section">
   <div class="container">
     <div class="final-cta">
-      <div class="final-visual"><span class="placeholder-label">[VISUAL: Vehicle silhouette or phone with app]</span></div>
+      <div class="final-visual">
+        <img src="assets/icons/final_cta_dark.svg" alt="" loading="lazy"/>
+      </div>
       <h2 class="t-h1">Your vehicle deserves better than a shoebox.</h2>
       <p class="t-sub" style="text-align:center">Start building your service history today. Free, forever — or go Pro and let AI do the work.</p>
       <div class="final-cta-actions">
