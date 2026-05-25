@@ -153,8 +153,26 @@ body {
   align-items: flex-start; gap: var(--space-sm);
   margin-top: var(--space-xs);
 }
-.hero-visual { display: flex; align-items: center; justify-content: center; }
+.hero-visual {
+  display: flex; align-items: center; justify-content: center;
+}
 
+/* Hero SVG image wrapper */
+.hero-svg-wrap {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+}
+.hero-svg-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fallback placeholder */
 .visual-placeholder {
   width: 100%; aspect-ratio: 1; max-width: 440px;
   background: var(--bg-card); border: 1px solid var(--border-card);
@@ -173,42 +191,29 @@ body {
    use .secondary modifier, update icon + text.
    ============================================ */
 .store-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
+  display: flex; flex-wrap: wrap;
+  gap: 10px; align-items: center;
 }
 .store-actions.centered { justify-content: center; }
 
 .btn-store {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 11px 20px;
-  border-radius: 12px;
-  text-decoration: none;
-  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 11px 20px; border-radius: 12px;
+  text-decoration: none; flex-shrink: 0;
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 .btn-store:hover { opacity: 0.88; transform: translateY(-1px); }
 .btn-store:active { transform: translateY(0); opacity: 1; }
-
-.btn-store.primary {
-  background: var(--text-primary);
-  color: var(--bg-base);
-}
+.btn-store.primary { background: var(--text-primary); color: var(--bg-base); }
 .btn-store.secondary {
-  background: transparent;
-  color: var(--text-primary);
+  background: transparent; color: var(--text-primary);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .btn-store.secondary:hover { border-color: rgba(255, 255, 255, 0.35); }
-
 .btn-store-icon { width: 18px; height: 18px; flex-shrink: 0; }
 .btn-store-text { display: flex; flex-direction: column; line-height: 1.15; }
 .btn-store-text .sup { font-size: 9px; font-weight: 400; letter-spacing: 0.05em; opacity: 0.65; }
 .btn-store-text .main { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
-
 .supporting-line { font-size: 13px; color: var(--text-tertiary); }
 
 /* PROBLEM */
@@ -270,11 +275,19 @@ body {
   transition: border-color 0.2s, background 0.2s;
 }
 .feature-card:hover { background: var(--bg-card-hover); border-color: var(--border-accent); }
+
+/* Feature visual: SVG image fills nicely */
 .feature-card-visual {
   width: 100%; aspect-ratio: 4/3;
   background: var(--bg-elevated); border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
   display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.feature-card-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .feature-card-content { display: flex; flex-direction: column; gap: var(--space-xs); }
 
@@ -292,11 +305,28 @@ body {
   width: 3px; background: var(--accent);
 }
 .why-card:hover { border-color: var(--border-accent); }
+
+/* Why card icon: large SVG illustration */
 .why-card-icon {
-  width: 56px; height: 56px; border-radius: var(--radius-sm);
-  background: var(--bg-elevated); border: 1px solid var(--border-card);
+  width: 100%;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-card);
+  overflow: hidden;
+  aspect-ratio: 16/9;
   display: flex; align-items: center; justify-content: center;
 }
+.why-card-icon img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.why-card-icon.small {
+  width: 56px; height: 56px;
+  border-radius: var(--radius-sm);
+  aspect-ratio: 1;
+}
+.why-card-icon.small .placeholder-label { font-size: 9px; }
 .why-card-content { display: flex; flex-direction: column; gap: var(--space-sm); }
 
 /* PRICING */
@@ -389,6 +419,7 @@ body {
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: var(--space-xl); }
   .hero-visual { order: -1; }
+  .hero-svg-wrap { max-width: 340px; }
   .hero-actions, .store-actions { align-items: center; }
   .hero-content { text-align: center; align-items: center; }
   .hero-headline .t-label { align-self: center; }
@@ -439,7 +470,6 @@ body {
         <p class="t-sub">Snap a receipt — Docaro logs it instantly. Service history, reminders, and expenses. Always with you.</p>
         <div class="hero-actions">
           <div class="store-actions">
-            <!-- App Store: primary -->
             <a href="#" class="btn-store primary">
               <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/>
@@ -449,7 +479,6 @@ body {
                 <span class="main">App Store</span>
               </div>
             </a>
-            <!-- Google Play: secondary -->
             <a href="#" class="btn-store secondary">
               <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.4 1.2C2 1.6 2 2.2 2 3v14c0 .8 0 1.4.4 1.8L2.5 19l7.8-7.8v-.2L2.5 3l-.1.2zM16.3 13.7l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.8-.1-.1zM2.5 18.9c.3.3.8.3 1.3 0L13.6 13l-2.7-2.7-8.4 8.5.1.1zM3.8 1.1L13.6 7 10.9 9.7 3.8 2.4V1.4l.1-.3z"/>
@@ -459,7 +488,7 @@ body {
                 <span class="main">Google Play</span>
               </div>
             </a>
-            <!-- NEW MARKETPLACE TEMPLATE (commented out, ready to activate):
+            <!-- NEW MARKETPLACE TEMPLATE:
             <a href="#" class="btn-store secondary">
               <svg class="btn-store-icon" ...></svg>
               <div class="btn-store-text">
@@ -473,8 +502,15 @@ body {
         </div>
       </div>
       <div class="hero-visual">
-        <div class="visual-placeholder">
-          <span class="placeholder-label">[VISUAL: Phone — AI scan screen]</span>
+        <!-- Hero illustration: auth_hero_dark.svg from app repo -->
+        <div class="hero-svg-wrap">
+          <img
+            src="https://raw.githubusercontent.com/nikodrumpp/docaro/main/assets/icons/auth_hero_dark.svg"
+            alt="Docaro app — AI receipt scanning"
+            width="480"
+            height="480"
+            loading="eager"
+          />
         </div>
       </div>
     </div>
@@ -564,48 +600,79 @@ body {
       <h2 class="t-h1">One app. Full control.</h2>
     </div>
     <div class="features-grid">
+
       <div class="feature-card">
-        <div class="feature-card-visual"><span class="placeholder-label">[ICON: Service history list]</span></div>
+        <div class="feature-card-visual">
+          <span class="placeholder-label">[ICON: Service history list]</span>
+        </div>
         <div class="feature-card-content">
           <h3 class="t-h3">Full Service History</h3>
           <p class="t-body-sm">Oil, tires, brakes, insurance, inspection — every record in one place. Always up to date.</p>
         </div>
       </div>
+
       <div class="feature-card">
-        <div class="feature-card-visual"><span class="placeholder-label">[SVG: smart_reminders_dark]</span></div>
+        <div class="feature-card-visual">
+          <img
+            src="https://raw.githubusercontent.com/nikodrumpp/docaro/main/assets/icons/smart_reminders_dark.svg"
+            alt="Smart Reminders"
+            loading="lazy"
+          />
+        </div>
         <div class="feature-card-content">
           <h3 class="t-h3">Smart Reminders</h3>
           <p class="t-body-sm">Set it once. Docaro reminds you before the next service date — so nothing slips through.</p>
         </div>
       </div>
+
       <div class="feature-card">
-        <div class="feature-card-visual"><span class="placeholder-label">[SVG: unlimited_records_dark]</span></div>
+        <div class="feature-card-visual">
+          <img
+            src="https://raw.githubusercontent.com/nikodrumpp/docaro/main/assets/icons/unlimited_records_dark.svg"
+            alt="Expense Tracking"
+            loading="lazy"
+          />
+        </div>
         <div class="feature-card-content">
           <h3 class="t-h3">Expense Tracking</h3>
           <p class="t-body-sm">See exactly how much your vehicle costs. Monthly, yearly, by category.</p>
         </div>
       </div>
+
       <div class="feature-card">
-        <div class="feature-card-visual"><span class="placeholder-label">[ICON: Multiple vehicles]</span></div>
+        <div class="feature-card-visual">
+          <span class="placeholder-label">[ICON: Multiple vehicles]</span>
+        </div>
         <div class="feature-card-content">
           <h3 class="t-h3">Multiple Vehicles</h3>
           <p class="t-body-sm">Car, motorcycle, truck, boat — manage all of them in one account.</p>
         </div>
       </div>
+
       <div class="feature-card">
-        <div class="feature-card-visual"><span class="placeholder-label">[SVG: pdf_export_dark]</span></div>
+        <div class="feature-card-visual">
+          <img
+            src="https://raw.githubusercontent.com/nikodrumpp/docaro/main/assets/icons/pdf_export_dark.svg"
+            alt="PDF Export"
+            loading="lazy"
+          />
+        </div>
         <div class="feature-card-content">
           <h3 class="t-h3">PDF Export</h3>
           <p class="t-body-sm">Generate a clean service report in one tap. Ready to share with a buyer or mechanic.</p>
         </div>
       </div>
+
       <div class="feature-card">
-        <div class="feature-card-visual"><span class="placeholder-label">[ICON: Two figures + transfer arrow]</span></div>
+        <div class="feature-card-visual">
+          <span class="placeholder-label">[ICON: Two figures + transfer arrow]</span>
+        </div>
         <div class="feature-card-content">
           <h3 class="t-h3">History Transfer</h3>
           <p class="t-body-sm">Selling your vehicle? Transfer the full service history to the new owner in one tap.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -620,27 +687,41 @@ body {
       <h2 class="t-h1">Built different. For a reason.</h2>
     </div>
     <div class="why-grid">
+
       <div class="why-card">
-        <div class="why-card-icon"><span class="placeholder-label" style="font-size:9px">[SVG: ai_scan_dark]</span></div>
+        <div class="why-card-icon">
+          <img
+            src="https://raw.githubusercontent.com/nikodrumpp/docaro/main/assets/icons/ai_scan_dark.svg"
+            alt="AI receipt scanning"
+            loading="lazy"
+          />
+        </div>
         <div class="why-card-content">
           <h3 class="t-h3">Snap a photo — AI does the rest</h3>
           <p class="t-body-sm">No typing. No manual forms. Point your camera at any receipt and Docaro creates the record automatically. Seconds, not minutes.</p>
         </div>
       </div>
+
       <div class="why-card">
-        <div class="why-card-icon"><span class="placeholder-label" style="font-size:9px">[ICON: Two figures + arrow]</span></div>
+        <div class="why-card-icon small">
+          <span class="placeholder-label" style="font-size:9px">[ICON: Two figures + arrow]</span>
+        </div>
         <div class="why-card-content">
           <h3 class="t-h3">Selling your vehicle? One tap to transfer</h3>
           <p class="t-body-sm">Your full service history transfers to the new owner instantly. No paperwork. No lost records. Just proof that your vehicle was cared for.</p>
         </div>
       </div>
+
       <div class="why-card">
-        <div class="why-card-icon"><span class="placeholder-label" style="font-size:9px">[ICON: Shield + lock]</span></div>
+        <div class="why-card-icon small">
+          <span class="placeholder-label" style="font-size:9px">[ICON: Shield + lock]</span>
+        </div>
         <div class="why-card-content">
           <h3 class="t-h3">Your data stays yours</h3>
           <p class="t-body-sm">No third-party access. No data selling. Your service history belongs to you — and only you.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -710,7 +791,6 @@ body {
       <p class="t-sub" style="text-align:center">Start building your service history today. Free, forever — or go Pro and let AI do the work.</p>
       <div class="final-cta-actions">
         <div class="store-actions centered">
-          <!-- App Store: primary -->
           <a href="#" class="btn-store primary">
             <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M14.5 10.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.3-1.5-2.8-1.5-1.2-0.1-2.3 0.7-2.9 0.7-0.6 0-1.5-0.7-2.5-0.7-1.3 0-2.5 0.8-3.1 1.9-1.3 2.3-0.3 5.8 0.9 7.7 0.6 0.9 1.4 1.9 2.4 1.9 0.9 0 1.3-0.6 2.5-0.6 1.2 0 1.5 0.6 2.5 0.6 1 0 1.7-0.9 2.4-1.8 0.7-1 1-2 1-2-0.1 0-2-0.8-2-2.9zM12.6 4.4c0.5-0.6 0.9-1.5 0.7-2.4-0.7 0-1.6 0.5-2.1 1.1-0.5 0.5-0.9 1.4-0.8 2.2 0.8 0.1 1.7-0.3 2.2-0.9z"/>
@@ -720,7 +800,6 @@ body {
               <span class="main">App Store</span>
             </div>
           </a>
-          <!-- Google Play: secondary -->
           <a href="#" class="btn-store secondary">
             <svg class="btn-store-icon" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.4 1.2C2 1.6 2 2.2 2 3v14c0 .8 0 1.4.4 1.8L2.5 19l7.8-7.8v-.2L2.5 3l-.1.2zM16.3 13.7l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.8-.1-.1zM2.5 18.9c.3.3.8.3 1.3 0L13.6 13l-2.7-2.7-8.4 8.5.1.1zM3.8 1.1L13.6 7 10.9 9.7 3.8 2.4V1.4l.1-.3z"/>
