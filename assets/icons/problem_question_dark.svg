@@ -1,17 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="100%" height="100%">
-  <rect width="80" height="80" rx="18" fill="#0D0D10"/>
-  <ellipse cx="40" cy="44" rx="30" ry="20" fill="#8E8E93" opacity="0.04"/>
-  <path d="M14 56 L16 48 C16 42 19 38 23 36 L32 32 L35 29 L37 27 L43 27 L46 29 L50 34 L58 42 L60 48 L60 56 Z"
-        fill="#1E2A3E" stroke="#4B9EFF" stroke-width="1" stroke-opacity="0.35"/>
-  <path d="M24 46 C24 44 26 42 30 42 C34 42 36 44 36 46 Z" fill="#07080E"/>
-  <path d="M44 46 C44 44 46 42 50 42 C54 42 56 44 56 46 Z" fill="#07080E"/>
-  <path d="M35 29 L37 27 L43 27 L45 29 L44 31 L37 31 Z" fill="#162438"/>
-  <path d="M37 27 L40 28.5 L43 27" fill="none" stroke="#4B9EFF" stroke-width="0.75" stroke-opacity="0.3"/>
-  <rect x="14" y="52" width="52" height="5" rx="2.5" fill="#0A0D18" stroke="#4B9EFF" stroke-width="0.5" stroke-opacity="0.18"/>
-  <circle cx="30" cy="60" r="6" fill="#080810" stroke="#48484A" stroke-width="1"/>
-  <circle cx="50" cy="60" r="6" fill="#080810" stroke="#48484A" stroke-width="1"/>
-  <ellipse cx="40" cy="56" rx="15" ry="4" fill="#8E8E93" opacity="0.12"/>
-  <text x="40" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="#8E8E93" opacity="0.65" font-family="system-ui, -apple-system, sans-serif">?</text>
-  <circle cx="12" cy="22" r="2" fill="#8E8E93" opacity="0.18"/>
-  <circle cx="68" cy="54" r="1.5" fill="#4B9EFF" opacity="0.14"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="carGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2A3E"/>
+      <stop offset="100%" stop-color="#0D1520"/>
+    </linearGradient>
+    <linearGradient id="rimGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E3048"/>
+      <stop offset="100%" stop-color="#1A1C2E"/>
+    </linearGradient>
+    <filter id="gBlue" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gGrey" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ground glow -->
+  <ellipse cx="160" cy="166" rx="120" ry="8" fill="#4B9EFF" opacity="0.10" filter="url(#gBlue)"/>
+  <ellipse cx="160" cy="166" rx="90" ry="4" fill="#4B9EFF" opacity="0.08"/>
+
+  <!-- CAR BODY -->
+  <path d="M 48,152 L 46,138 C 46,126 56,116 68,110 L 90,100 L 104,88 L 116,78 L 204,78 L 218,88 L 234,100 L 256,118 L 272,136 L 274,152 Z"
+        fill="url(#carGrad)" stroke="#4B9EFF" stroke-width="1" stroke-opacity="0.35"/>
+
+  <!-- Wheel arches -->
+  <path d="M 68,152 C 68,148 74,142 86,142 C 98,142 104,148 104,152 Z" fill="#070810"/>
+  <path d="M 216,152 C 216,148 222,142 234,142 C 246,142 252,148 252,152 Z" fill="#070810"/>
+
+  <!-- Sill -->
+  <rect x="56" y="145" width="208" height="5" rx="2.5" fill="#0A0D18" stroke="#4B9EFF" stroke-width="0.5" stroke-opacity="0.15"/>
+
+  <!-- Window -->
+  <path d="M 112,89 L 122,79 L 198,79 L 212,89 L 200,97 L 122,97 Z" fill="#0A0D18"/>
+  <path d="M 114,88 L 123,79 L 197,79 L 210,88 L 199,96 L 124,96 Z" fill="#162438" opacity="0.9"/>
+
+  <!-- Headlight -->
+  <path d="M 48,140 L 50,124 C 51,121 56,118 62,118 L 66,118 L 66,132 L 50,141 Z"
+        fill="#0A0A14" stroke="#4B9EFF" stroke-width="0.75" stroke-opacity="0.38"/>
+  <path d="M 50,138 C 51,130 54,124 59,121" fill="none" stroke="#4B9EFF" stroke-width="2" stroke-linecap="round" stroke-opacity="0.75" filter="url(#gBlue)"/>
+  <circle cx="63" cy="121" r="3" fill="#4B9EFF" opacity="0.5" filter="url(#gBlue)"/>
+  <circle cx="63" cy="121" r="1.5" fill="#FFF" opacity="0.8"/>
+
+  <!-- Taillight -->
+  <rect x="268" y="126" width="5" height="18" rx="2" fill="#EF4444" opacity="0.65"/>
+
+  <!-- LEFT WHEEL -->
+  <circle cx="86" cy="157" r="18" fill="#080810" stroke="#1C1C28" stroke-width="1.2"/>
+  <circle cx="86" cy="157" r="13" fill="url(#rimGrad)" stroke="#2C2C40" stroke-width="0.75"/>
+  <g stroke="#383850" stroke-width="2" stroke-linecap="round">
+    <line x1="86" y1="144" x2="86" y2="150"/>
+    <line x1="98" y1="151" x2="93" y2="154"/>
+    <line x1="94" y1="168" x2="90" y2="163"/>
+    <line x1="78" y1="168" x2="82" y2="163"/>
+    <line x1="74" y1="151" x2="79" y2="154"/>
+  </g>
+  <circle cx="86" cy="157" r="4" fill="#0F0F1A" stroke="#262636" stroke-width="0.75"/>
+  <circle cx="86" cy="157" r="1.5" fill="#4B9EFF" opacity="0.35"/>
+
+  <!-- RIGHT WHEEL -->
+  <circle cx="234" cy="157" r="18" fill="#080810" stroke="#1C1C28" stroke-width="1.2"/>
+  <circle cx="234" cy="157" r="13" fill="url(#rimGrad)" stroke="#2C2C40" stroke-width="0.75"/>
+  <g stroke="#383850" stroke-width="2" stroke-linecap="round">
+    <line x1="234" y1="144" x2="234" y2="150"/>
+    <line x1="246" y1="151" x2="241" y2="154"/>
+    <line x1="242" y1="168" x2="238" y2="163"/>
+    <line x1="226" y1="168" x2="230" y2="163"/>
+    <line x1="222" y1="151" x2="227" y2="154"/>
+  </g>
+  <circle cx="234" cy="157" r="4" fill="#0F0F1A" stroke="#262636" stroke-width="0.75"/>
+  <circle cx="234" cy="157" r="1.5" fill="#4B9EFF" opacity="0.35"/>
+
+  <!-- QUESTION MARK — floating above car -->
+  <circle cx="160" cy="38" r="24" fill="#8E8E93" opacity="0.08" filter="url(#gGrey)"/>
+  <text x="160" y="48" text-anchor="middle"
+        font-size="36" font-weight="700" fill="#8E8E93" opacity="0.60"
+        font-family="-apple-system, 'Helvetica Neue', sans-serif">?</text>
 </svg>

@@ -1,18 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="100%" height="100%">
-  <rect width="80" height="80" rx="18" fill="#0D0D10"/>
-  <ellipse cx="40" cy="42" rx="28" ry="22" fill="#F59E0B" opacity="0.04"/>
-  <g transform="rotate(-8, 38, 42)">
-    <rect x="20" y="14" width="38" height="52" rx="5" fill="#FAFAF8"/>
-    <rect x="20" y="14" width="38" height="7" rx="5" fill="#EDE9E1"/>
-    <rect x="26" y="26" width="26" height="3" rx="1.5" fill="#3A3A3C" opacity="0.45"/>
-    <rect x="26" y="32" width="18" height="2.5" rx="1.25" fill="#636366" opacity="0.38"/>
-    <rect x="26" y="37" width="22" height="2.5" rx="1.25" fill="#636366" opacity="0.35"/>
-    <rect x="26" y="42" width="16" height="2.5" rx="1.25" fill="#636366" opacity="0.32"/>
-    <rect x="20" y="49" width="38" height="0.75" rx="0.5" fill="#C0BBB2" opacity="0.55"/>
-    <rect x="26" y="53" width="12" height="4" rx="2" fill="#1C1C1E" opacity="0.45"/>
-    <rect x="44" y="52" width="10" height="6" rx="3" fill="#1C1C1E" opacity="0.45"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F3EE"/>
+      <stop offset="100%" stop-color="#E8E4DB"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Receipt 1 — back, most tilted, faded -->
+  <g transform="rotate(12, 90, 95)" opacity="0.35">
+    <rect x="28" y="28" width="120" height="154" rx="5" fill="url(#paper)"/>
+    <rect x="28" y="28" width="120" height="12" rx="5" fill="#DDD9D0"/>
+    <rect x="38" y="50" width="68" height="4" rx="2" fill="#1C1C1E" opacity="0.4"/>
+    <rect x="38" y="60" width="48" height="3" rx="1.5" fill="#636366" opacity="0.35"/>
+    <rect x="38" y="70" width="58" height="3" rx="1.5" fill="#636366" opacity="0.3"/>
+    <rect x="38" y="80" width="44" height="3" rx="1.5" fill="#636366" opacity="0.28"/>
   </g>
-  <path d="M44 58 Q50 54 52 62 Q54 70 44 66 Z" fill="#F59E0B" opacity="0.25"/>
-  <circle cx="16" cy="20" r="2" fill="#F59E0B" opacity="0.22"/>
-  <circle cx="64" cy="60" r="1.5" fill="#F59E0B" opacity="0.15"/>
+
+  <!-- Receipt 2 — middle -->
+  <g transform="rotate(-6, 160, 90)" opacity="0.6">
+    <rect x="98" y="20" width="120" height="154" rx="5" fill="url(#paper)"/>
+    <rect x="98" y="20" width="120" height="12" rx="5" fill="#DDD9D0"/>
+    <rect x="110" y="42" width="72" height="4" rx="2" fill="#1C1C1E" opacity="0.45"/>
+    <rect x="110" y="52" width="52" height="3" rx="1.5" fill="#636366" opacity="0.38"/>
+    <rect x="110" y="61" width="62" height="3" rx="1.5" fill="#636366" opacity="0.33"/>
+    <rect x="110" y="70" width="44" height="3" rx="1.5" fill="#636366" opacity="0.3"/>
+    <line x1="106" y1="82" x2="212" y2="82" stroke="#C0BBB2" stroke-width="0.75" opacity="0.5"/>
+    <rect x="110" y="90" width="36" height="6" rx="3" fill="#1C1C1E" opacity="0.45"/>
+    <rect x="166" y="88" width="38" height="10" rx="5" fill="#1C1C1E" opacity="0.4"/>
+  </g>
+
+  <!-- Main receipt — front, slightly crumpled -->
+  <g filter="url(#shadow)">
+    <rect x="110" y="12" width="128" height="166" rx="6" fill="url(#paper)"/>
+  </g>
+  <!-- Torn/crumpled top edge -->
+  <path d="M110,18 Q118,12 126,17 Q134,22 142,14 Q150,8 158,15 Q166,22 174,13 Q182,7 190,14 Q198,21 206,13 Q214,8 222,14 Q230,20 238,16 L238,18 L110,18 Z"
+        fill="#EDE9E0"/>
+  <rect x="110" y="12" width="128" height="14" rx="6" fill="#E0DDD4"/>
+  <!-- Receipt content -->
+  <rect x="122" y="36" width="72" height="5" rx="2.5" fill="#1C1C1E" opacity="0.52"/>
+  <rect x="122" y="48" width="52" height="3.5" rx="1.75" fill="#636366" opacity="0.42"/>
+  <line x1="118" y1="58" x2="230" y2="58" stroke="#C0BBB2" stroke-width="0.75" opacity="0.55"/>
+  <rect x="122" y="65" width="60" height="3" rx="1.5" fill="#3A3A3C" opacity="0.48"/>
+  <rect x="194" y="65" width="32" height="3" rx="1.5" fill="#3A3A3C" opacity="0.48"/>
+  <rect x="122" y="74" width="48" height="3" rx="1.5" fill="#636366" opacity="0.38"/>
+  <rect x="194" y="74" width="26" height="3" rx="1.5" fill="#636366" opacity="0.38"/>
+  <rect x="122" y="83" width="54" height="3" rx="1.5" fill="#636366" opacity="0.35"/>
+  <rect x="194" y="83" width="28" height="3" rx="1.5" fill="#636366" opacity="0.35"/>
+  <rect x="122" y="92" width="42" height="3" rx="1.5" fill="#636366" opacity="0.32"/>
+  <rect x="194" y="92" width="22" height="3" rx="1.5" fill="#636366" opacity="0.32"/>
+  <line x1="118" y1="102" x2="230" y2="102" stroke="#C0BBB2" stroke-width="0.75" opacity="0.55"/>
+  <rect x="122" y="109" width="44" height="5" rx="2.5" fill="#1C1C1E" opacity="0.5"/>
+  <rect x="180" y="107" width="44" height="10" rx="5" fill="#1C1C1E" opacity="0.45"/>
+  <!-- Barcode -->
+  <rect x="118" y="128" width="112" height="28" rx="3" fill="#E8E4DA"/>
+  <g fill="#1C1C1E" opacity="0.38">
+    <rect x="122" y="131" width="2" height="22"/><rect x="126" y="131" width="1" height="22"/>
+    <rect x="129" y="131" width="3" height="22"/><rect x="134" y="131" width="1" height="22"/>
+    <rect x="137" y="131" width="2" height="22"/><rect x="141" y="131" width="4" height="22"/>
+    <rect x="147" y="131" width="1" height="22"/><rect x="150" y="131" width="2" height="22"/>
+    <rect x="154" y="131" width="3" height="22"/><rect x="159" y="131" width="1" height="22"/>
+    <rect x="162" y="131" width="2" height="22"/><rect x="166" y="131" width="3" height="22"/>
+    <rect x="171" y="131" width="1" height="22"/><rect x="174" y="131" width="2" height="22"/>
+    <rect x="178" y="131" width="4" height="22"/><rect x="184" y="131" width="1" height="22"/>
+    <rect x="187" y="131" width="2" height="22"/><rect x="191" y="131" width="3" height="22"/>
+    <rect x="196" y="131" width="1" height="22"/><rect x="199" y="131" width="2" height="22"/>
+    <rect x="203" y="131" width="3" height="22"/><rect x="208" y="131" width="1" height="22"/>
+    <rect x="211" y="131" width="2" height="22"/><rect x="215" y="131" width="3" height="22"/>
+    <rect x="220" y="131" width="1" height="22"/><rect x="223" y="131" width="2" height="22"/>
+  </g>
+  <!-- Wavy bottom tear -->
+  <path d="M110,178 Q116,172 122,178 Q128,184 134,176 Q140,170 146,177 Q152,184 158,175 Q164,168 170,176 Q176,183 182,174 Q188,167 194,175 Q200,182 206,173 Q212,166 218,174 Q224,181 230,172 Q234,166 238,174 L238,180 L110,180 Z"
+        fill="#E0DDD4"/>
 </svg>
