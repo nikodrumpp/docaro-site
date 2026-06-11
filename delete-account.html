@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Account — Docaro</title>
+<style>
+:root {
+  --bg-base:        #080810;
+  --bg-surface:     #0F0F1A;
+  --bg-elevated:    #14141F;
+  --bg-card:        #17171F;
+  --accent:         #0A84FF;
+  --accent-dim:     rgba(10, 132, 255, 0.12);
+  --accent-border:  rgba(10, 132, 255, 0.30);
+  --text-primary:   #F5F5F7;
+  --text-secondary: #8E8E93;
+  --text-tertiary:  #48484A;
+  --border-subtle:  rgba(255, 255, 255, 0.05);
+  --border-card:    rgba(255, 255, 255, 0.08);
+  --font-display: 'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif;
+  --font-text:    'SF Pro Text',    -apple-system, 'Helvetica Neue', sans-serif;
+  --font-mono:    'SF Mono', 'Fira Code', monospace;
+  --space-sm: 8px; --space-md: 16px; --space-lg: 24px;
+  --space-xl: 40px; --space-3xl: 96px;
+  --radius-lg: 16px;
+  --content-width: 1100px; --text-width: 720px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { background-color: var(--bg-base); color: var(--text-primary); font-family: var(--font-text); font-size: 17px; line-height: 1.6; overflow-x: hidden; }
+.t-display { font-family: var(--font-display); font-size: clamp(32px, 5vw, 56px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; }
+.t-label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.container { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); }
+.section-divider { width: 100%; height: 1px; background: var(--border-subtle); }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.72); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border-subtle); }
+.nav-inner { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: var(--space-sm); text-decoration: none; }
+.nav-logo-mark { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+.nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.nav-logo-text { font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); }
+.nav-links { display: flex; align-items: center; gap: var(--space-lg); }
+.nav-link { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+.nav-link:hover { color: var(--text-primary); }
+.nav-cta { padding: 8px 18px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; border-radius: 20px; text-decoration: none; transition: opacity 0.15s; }
+.nav-cta:hover { opacity: 0.88; }
+.page-hero { padding-top: calc(56px + 72px); padding-bottom: 64px; }
+.page-hero-inner { max-width: var(--text-width); display: flex; flex-direction: column; gap: var(--space-lg); }
+.last-updated { font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); letter-spacing: 0.06em; }
+.policy-body { padding: 64px 0 96px; }
+.policy-content { max-width: var(--text-width); display: flex; flex-direction: column; gap: 48px; }
+.policy-section { display: flex; flex-direction: column; gap: 16px; }
+.policy-section-title { font-family: var(--font-display); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); }
+.policy-section-body { font-size: 16px; line-height: 1.75; color: var(--text-secondary); white-space: pre-line; }
+.policy-section-body a { color: var(--accent); text-decoration: none; }
+.policy-section-body a:hover { text-decoration: underline; }
+.step-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 24px; display: flex; gap: 20px; align-items: flex-start; }
+.step-number { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-dim); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--accent); flex-shrink: 0; }
+.step-content { display: flex; flex-direction: column; gap: 6px; }
+.step-title { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+.step-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+.warning-card { background: rgba(255, 69, 58, 0.08); border: 1px solid rgba(255, 69, 58, 0.25); border-radius: var(--radius-lg); padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; }
+.warning-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.warning-text { font-size: 15px; color: #FF6961; line-height: 1.6; }
+.policy-email { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 10px 18px; background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: var(--radius-lg); font-family: var(--font-mono); font-size: 14px; color: var(--accent); text-decoration: none; transition: background 0.15s; }
+.policy-email:hover { background: rgba(10, 132, 255, 0.2); }
+.footer { border-top: 1px solid var(--border-subtle); padding: var(--space-xl) 0; }
+.footer-inner { max-width: var(--content-width); margin:0 auto; padding: 0 var(--space-lg); display:flex; align-items:center; justify-content:space-between; }
+.footer-copy { font-size: 13px; color: var(--text-tertiary); }
+.footer-links { display: flex; gap: var(--space-lg); }
+.footer-link { font-size: 13px; color: var(--text-tertiary); text-decoration: none; transition: color 0.15s; }
+.footer-link:hover { color: var(--text-secondary); }
+@media (max-width: 600px) {
+  .nav-inner, .container { padding: 0 var(--space-md); }
+  .nav-links { display: none; }
+  .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <img src="assets/icons/app-icon.svg" alt="Docaro" width="32" height="32"/>
+      </div>
+      <span class="nav-logo-text">Docaro</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="support.html" class="nav-link">Support</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+    </div>
+    <a href="#" class="nav-cta">Download Free</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <span class="t-label">Account</span>
+      <h1 class="t-display">Delete Your Account</h1>
+      <p class="last-updated">Docaro — Car Service Book by BotNeverSleeps Labs</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="policy-body">
+  <div class="container">
+    <div class="policy-content">
+
+      <div class="policy-section">
+        <h2 class="policy-section-title">How to Delete Your Account</h2>
+        <p class="policy-section-body">You can delete your Docaro account and all associated data directly from within the app. Follow the steps below:</p>
+
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <div class="step-title">Open the app and go to Settings</div>
+            <div class="step-desc">Tap the menu icon or navigate to the Settings section from the main screen.</div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-title">Tap "Delete Account"</div>
+            <div class="step-desc">Scroll to the bottom of Settings and tap "Delete Account and Data".</div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <div class="step-title">Confirm deletion</div>
+            <div class="step-desc">You will be asked to confirm your decision. Once confirmed, your account and all data will be permanently deleted.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-section-title">What Data Will Be Deleted</h2>
+        <p class="policy-section-body">Upon account deletion, the following data is permanently removed from our servers within 30 days:
+
+• Your account information (email address, authentication data)
+• All vehicle profiles you created
+• All service records, including photos of receipts
+• All reminders and notification settings
+• All app preferences and settings</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-section-title">What Data May Be Retained</h2>
+        <p class="policy-section-body">We may retain the following data for legal and compliance purposes:
+
+• Anonymized usage analytics (no personal identifiers) — retained for up to 12 months
+• Transaction records required by financial regulations — retained for up to 7 years as required by law
+
+Your subscription history is managed by Apple App Store or Google Play and is subject to their respective data retention policies.</p>
+
+        <div class="warning-card">
+          <div class="warning-icon">⚠️</div>
+          <div class="warning-text">Account deletion is permanent and cannot be undone. All your vehicle history and service records will be lost. We recommend exporting your data (PDF export) before deleting your account.</div>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-section-title">Request Deletion by Email</h2>
+        <p class="policy-section-body">If you are unable to access the app, you can request account deletion by emailing us. Please include the email address associated with your Docaro account. We will process your request within 30 days.</p>
+        <a class="policy-email" href="mailto:support@botneversleeps.com">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4a1.5 1.5 0 011.5-1.5h9A1.5 1.5 0 0114 4v8a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 12V4z" stroke="currentColor" stroke-width="1.2"/><path d="M2 5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          support@botneversleeps.com
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 Docaro by BotNeverSleeps Labs. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="index.html" class="footer-link">Home</a>
+      <a href="support.html" class="footer-link">Support</a>
+      <a href="privacy.html" class="footer-link">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
