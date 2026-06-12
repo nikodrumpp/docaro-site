@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://docaro.botneversleeps.com/assets/og-image.png">
 
 <meta name="theme-color" content="#080810">
-<link rel="icon" type="image/svg+xml" href="assets/icons/app-icon.svg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
 <script type="application/ld+json">
 {
@@ -37,132 +37,110 @@
 </script>
 
 <style>
-
 :root {
-  --bg-base:        #080810;
-  --bg-surface:     #0F0F1A;
-  --bg-elevated:    #14141F;
-  --bg-card:        #17171F;
-  --bg-card-hover:  #1C1C28;
-  --accent:         #0A84FF;
-  --accent-dim:     rgba(10, 132, 255, 0.12);
-  --accent-border:  rgba(10, 132, 255, 0.30);
-  --text-primary:   #F5F5F7;
-  --text-secondary: #8E8E93;
-  --text-tertiary:  #48484A;
-  --border-subtle:  rgba(255, 255, 255, 0.05);
-  --border-card:    rgba(255, 255, 255, 0.08);
-  --border-accent:  rgba(10, 132, 255, 0.25);
-  --font-display: 'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif;
-  --font-text:    'SF Pro Text',    -apple-system, 'Helvetica Neue', sans-serif;
-  --font-mono:    'SF Mono', 'Fira Code', monospace;
-  --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px;
-  --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 128px;
-  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
-  --content-width: 1100px; --text-width: 720px;
+  --bg-base:#080810;--bg-surface:#0F0F1A;--bg-elevated:#14141F;--bg-card:#17171F;--bg-card-hover:#1C1C28;
+  --accent:#0A84FF;--accent-dim:rgba(10,132,255,0.12);--accent-border:rgba(10,132,255,0.30);
+  --text-primary:#F5F5F7;--text-secondary:#8E8E93;--text-tertiary:#48484A;
+  --border-subtle:rgba(255,255,255,0.05);--border-card:rgba(255,255,255,0.08);--border-accent:rgba(10,132,255,0.25);
+  --font-display:'SF Pro Display',-apple-system,'Helvetica Neue',sans-serif;
+  --font-text:'SF Pro Text',-apple-system,'Helvetica Neue',sans-serif;
+  --font-mono:'SF Mono','Fira Code',monospace;
+  --space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;
+  --space-xl:40px;--space-2xl:64px;--space-3xl:96px;--space-4xl:128px;
+  --radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;
+  --content-width:1100px;--text-width:720px;
+  --nav-h:72px;
 }
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { background-color: var(--bg-base); color: var(--text-primary); font-family: var(--font-text); font-size: 17px; line-height: 1.6; overflow-x: hidden; }
-
-.t-display { font-family: var(--font-display); font-size: clamp(36px, 5vw, 60px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; }
-.t-h1 { font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; }
-.t-h2 { font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 28px); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
-.t-h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
-.t-body { font-size: 17px; line-height: 1.65; color: var(--text-secondary); }
-.t-body-sm { font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
-.t-label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
-.t-sub { font-size: clamp(16px, 2vw, 19px); line-height: 1.55; color: var(--text-secondary); max-width: var(--text-width); }
-
-.container { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); }
-.container-narrow { max-width: var(--text-width); margin: 0 auto; padding: 0 var(--space-lg); }
-.section { padding: var(--space-4xl) 0; }
-.section-divider { width: 100%; height: 1px; background: var(--border-subtle); }
-.section-header { margin-bottom: var(--space-3xl); display: flex; flex-direction: column; gap: var(--space-md); }
-.section-header.centered { text-align: center; align-items: center; }
-
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.72); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border-subtle); }
-.nav-inner { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); height: 56px; display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { display: flex; align-items: center; gap: var(--space-sm); text-decoration: none; }
-.nav-logo-mark { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
-.nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.nav-logo-text { font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); }
-.nav-links { display: flex; align-items: center; gap: var(--space-lg); }
-.nav-link { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
-.nav-link:hover { color: var(--text-primary); }
-.nav-link.active { color: var(--text-primary); }
-.nav-cta { padding: 8px 18px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; border-radius: 20px; text-decoration: none; transition: opacity 0.15s; }
-.nav-cta:hover { opacity: 0.88; }
-
-.page-hero { padding-top: calc(56px + 80px); padding-bottom: 80px; text-align: center; }
-.page-hero-inner { display: flex; flex-direction: column; align-items: center; gap: var(--space-lg); }
-.page-hero .t-sub { text-align: center; }
-
-.search-wrap { width: 100%; max-width: 520px; position: relative; }
-.search-input { width: 100%; padding: 14px 20px 14px 48px; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 14px; font-size: 16px; color: var(--text-primary); font-family: var(--font-text); outline: none; transition: border-color 0.2s; }
-.search-input::placeholder { color: var(--text-tertiary); }
-.search-input:focus { border-color: var(--accent-border); }
-.search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); pointer-events: none; }
-
-.quick-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
-.quick-link-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-md); text-decoration: none; color: inherit; transition: border-color 0.2s, background 0.2s; cursor: pointer; }
-.quick-link-card:hover { border-color: var(--border-accent); background: var(--bg-card-hover); }
-.quick-link-icon { width: 44px; height: 44px; border-radius: var(--radius-md); background: var(--accent-dim); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.quick-link-icon svg { color: var(--accent); }
-.quick-link-text { display: flex; flex-direction: column; gap: 4px; }
-.quick-link-text span { font-size: 13px; color: var(--text-tertiary); }
-
-.faq-list { display: flex; flex-direction: column; gap: 2px; }
-.faq-item { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-card); background: var(--bg-card); }
-.faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: var(--space-lg) var(--space-xl); background: none; border: none; color: var(--text-primary); font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; text-align: left; cursor: pointer; gap: var(--space-md); transition: color 0.15s; }
-.faq-question:hover { color: var(--accent); }
-.faq-chevron { flex-shrink: 0; color: var(--text-tertiary); transition: transform 0.25s ease; }
-.faq-item.open .faq-chevron { transform: rotate(180deg); }
-.faq-item.open .faq-question { color: var(--accent); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
-.faq-answer-inner { padding: 0 var(--space-xl) var(--space-lg); color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
-.faq-answer-inner a { color: var(--accent); text-decoration: none; }
-.faq-answer-inner a:hover { text-decoration: underline; }
-.faq-item.open .faq-answer { max-height: 400px; }
-
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
-.contact-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-lg); }
-.contact-card.primary { border-color: var(--accent-border); background: var(--bg-elevated); }
-.contact-card-icon { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; }
-.contact-card-icon svg { color: var(--accent); }
-.contact-card-body { display: flex; flex-direction: column; gap: var(--space-sm); flex: 1; }
-.response-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 20px; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.25); font-size: 12px; color: #34D399; font-family: var(--font-mono); letter-spacing: 0.06em; align-self: flex-start; }
-.response-dot { width: 6px; height: 6px; border-radius: 50%; background: #34D399; }
-
-.btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 22px; background: var(--accent); color:#fff; font-size:15px; font-weight:500; border-radius:12px; text-decoration:none; border:none; cursor:pointer; transition: opacity 0.15s, transform 0.15s; }
-.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-.btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 22px; background: transparent; color: var(--text-secondary); font-size:15px; font-weight:500; border-radius:12px; text-decoration:none; border: 1px solid var(--border-card); cursor:pointer; transition: border-color 0.15s, color 0.15s; }
-.btn-secondary:hover { border-color: var(--border-accent); color: var(--text-primary); }
-
-.tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
-.tip-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-md); }
-.tip-number { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--accent); opacity: 0.7; }
-
-.footer { border-top: 1px solid var(--border-subtle); padding: var(--space-xl) 0; }
-.footer-inner { max-width: var(--content-width); margin:0 auto; padding: 0 var(--space-lg); display:flex; align-items:center; justify-content:space-between; }
-.footer-copy { font-size: 13px; color: var(--text-tertiary); }
-.footer-links { display: flex; gap: var(--space-lg); }
-.footer-link { font-size: 13px; color: var(--text-tertiary); text-decoration: none; transition: color 0.15s; }
-.footer-link:hover { color: var(--text-secondary); }
-
-@media (max-width: 900px) {
-  .quick-links { grid-template-columns: 1fr 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .tips-grid { grid-template-columns: 1fr; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(--font-text);font-size:17px;line-height:1.6;overflow-x:hidden}
+.t-display{font-family:var(--font-display);font-size:clamp(36px,5vw,60px);font-weight:700;line-height:1.05;letter-spacing:-0.03em}
+.t-h1{font-family:var(--font-display);font-size:clamp(24px,3.5vw,40px);font-weight:700;line-height:1.1;letter-spacing:-0.025em}
+.t-h2{font-family:var(--font-display);font-size:clamp(20px,2.5vw,28px);font-weight:600;line-height:1.2;letter-spacing:-0.02em}
+.t-h3{font-family:var(--font-display);font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-0.01em}
+.t-body{font-size:17px;line-height:1.65;color:var(--text-secondary)}
+.t-body-sm{font-size:15px;line-height:1.6;color:var(--text-secondary)}
+.t-label{font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent)}
+.t-sub{font-size:clamp(16px,2vw,19px);line-height:1.55;color:var(--text-secondary);max-width:var(--text-width)}
+.container{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg)}
+.container-narrow{max-width:var(--text-width);margin:0 auto;padding:0 var(--space-lg)}
+.section{padding:var(--space-4xl) 0}
+.section-divider{width:100%;height:1px;background:var(--border-subtle)}
+.section-header{margin-bottom:var(--space-3xl);display:flex;flex-direction:column;gap:var(--space-md)}
+.section-header.centered{text-align:center;align-items:center}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,16,0.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border-subtle)}
+.nav-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:var(--space-sm);text-decoration:none}
+.nav-logo-mark{width:48px;height:48px;border-radius:12px;overflow:hidden;flex-shrink:0}
+.nav-logo-mark img{width:100%;height:100%;object-fit:cover;display:block}
+.nav-logo-text{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.01em;color:var(--text-primary)}
+.nav-links{display:flex;align-items:center;gap:var(--space-lg)}
+.nav-link{font-size:14px;color:var(--text-secondary);text-decoration:none;transition:color 0.15s}
+.nav-link:hover{color:var(--text-primary)}
+.nav-link.active{color:var(--text-primary)}
+.nav-cta{padding:8px 18px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;border-radius:20px;text-decoration:none;transition:opacity 0.15s}
+.nav-cta:hover{opacity:0.88}
+.page-hero{padding-top:calc(var(--nav-h) + 80px);padding-bottom:80px;text-align:center}
+.page-hero-inner{display:flex;flex-direction:column;align-items:center;gap:var(--space-lg)}
+.page-hero .t-sub{text-align:center}
+.search-wrap{width:100%;max-width:520px;position:relative}
+.search-input{width:100%;padding:14px 20px 14px 48px;background:var(--bg-card);border:1px solid var(--border-card);border-radius:14px;font-size:16px;color:var(--text-primary);font-family:var(--font-text);outline:none;transition:border-color 0.2s}
+.search-input::placeholder{color:var(--text-tertiary)}
+.search-input:focus{border-color:var(--accent-border)}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-tertiary);pointer-events:none}
+.quick-links{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+.quick-link-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);padding:var(--space-xl);display:flex;flex-direction:column;gap:var(--space-md);text-decoration:none;color:inherit;transition:border-color 0.2s,background 0.2s;cursor:pointer}
+.quick-link-card:hover{border-color:var(--border-accent);background:var(--bg-card-hover)}
+.quick-link-icon{width:44px;height:44px;border-radius:var(--radius-md);background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.quick-link-icon svg{color:var(--accent)}
+.quick-link-text{display:flex;flex-direction:column;gap:4px}
+.quick-link-text span{font-size:13px;color:var(--text-tertiary)}
+.faq-list{display:flex;flex-direction:column;gap:2px}
+.faq-item{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border-card);background:var(--bg-card)}
+.faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;padding:var(--space-lg) var(--space-xl);background:none;border:none;color:var(--text-primary);font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.01em;text-align:left;cursor:pointer;gap:var(--space-md);transition:color 0.15s}
+.faq-question:hover{color:var(--accent)}
+.faq-chevron{flex-shrink:0;color:var(--text-tertiary);transition:transform 0.25s ease}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-item.open .faq-question{color:var(--accent)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease}
+.faq-answer-inner{padding:0 var(--space-xl) var(--space-lg);color:var(--text-secondary);font-size:15px;line-height:1.7}
+.faq-answer-inner a{color:var(--accent);text-decoration:none}
+.faq-answer-inner a:hover{text-decoration:underline}
+.faq-item.open .faq-answer{max-height:400px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-lg)}
+.contact-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius-xl);padding:var(--space-xl);display:flex;flex-direction:column;gap:var(--space-lg)}
+.contact-card.primary{border-color:var(--accent-border);background:var(--bg-elevated)}
+.contact-card-icon{width:48px;height:48px;border-radius:var(--radius-md);background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center}
+.contact-card-icon svg{color:var(--accent)}
+.contact-card-body{display:flex;flex-direction:column;gap:var(--space-sm);flex:1}
+.response-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:20px;background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.25);font-size:12px;color:#34D399;font-family:var(--font-mono);letter-spacing:0.06em;align-self:flex-start}
+.response-dot{width:6px;height:6px;border-radius:50%;background:#34D399}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;background:var(--accent);color:#fff;font-size:15px;font-weight:500;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.15s,transform 0.15s}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;background:transparent;color:var(--text-secondary);font-size:15px;font-weight:500;border-radius:12px;text-decoration:none;border:1px solid var(--border-card);cursor:pointer;transition:border-color 0.15s,color 0.15s}
+.btn-secondary:hover{border-color:var(--border-accent);color:var(--text-primary)}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+.tip-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);padding:var(--space-xl);display:flex;flex-direction:column;gap:var(--space-md)}
+.tip-number{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.1em;color:var(--accent);opacity:0.7}
+.footer{border-top:1px solid var(--border-subtle);padding:var(--space-xl) 0}
+.footer-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:13px;color:var(--text-tertiary)}
+.footer-links{display:flex;gap:var(--space-lg)}
+.footer-link{font-size:13px;color:var(--text-tertiary);text-decoration:none;transition:color 0.15s}
+.footer-link:hover{color:var(--text-secondary)}
+@media(max-width:900px){
+  .quick-links{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .tips-grid{grid-template-columns:1fr}
 }
-@media (max-width: 600px) {
-  .section { padding: var(--space-3xl) 0; }
-  .nav-inner, .container, .container-narrow { padding: 0 var(--space-md); }
-  .quick-links { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  .footer-inner { flex-direction: column; gap: var(--space-md); text-align: center; }
-  .footer-links { flex-wrap: wrap; justify-content: center; }
+@media(max-width:600px){
+  .section{padding:var(--space-3xl) 0}
+  .nav-inner,.container,.container-narrow{padding:0 var(--space-md)}
+  .quick-links{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .footer-inner{flex-direction:column;gap:var(--space-md);text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+  .nav-logo-mark{width:40px;height:40px}
 }
 </style>
 </head>
@@ -172,7 +150,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-mark">
-        <img src="assets/icons/app-icon.svg" alt="Docaro" width="32" height="32"/>
+        <img src="assets/docaro_ava_v4_1024.png" alt="Docaro" width="48" height="48"/>
       </div>
       <span class="nav-logo-text">Docaro</span>
     </a>
@@ -240,64 +218,53 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 
 <div class="section-divider"></div>
 
-<section class="section" style="background: var(--bg-surface);">
+<section class="section" style="background:var(--bg-surface)">
   <div class="container-narrow">
     <div class="section-header">
       <span class="t-label">FAQ</span>
       <h2 class="t-h1">Frequently asked questions</h2>
     </div>
     <div class="faq-list" id="faqList" role="list">
-
       <div class="faq-item" id="faq-getting-started" data-keywords="start setup vehicle add first" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">How do I add my first vehicle?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">Open Docaro and tap the <strong>+</strong> button on the home screen. Enter your vehicle's make, model, year, and current mileage. That's it — your vehicle is ready. You can add multiple vehicles and switch between them at any time.</div></div>
       </div>
-
       <div class="faq-item" id="faq-ai-scan" data-keywords="scan receipt ai camera photo" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">How does the AI receipt scanner work?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">Tap the camera icon, point it at any receipt — paper or digital — and Docaro's AI will automatically extract the date, mileage, service type, and cost. The record is created instantly. You can edit any field before saving if something wasn't recognized correctly.</div></div>
       </div>
-
       <div class="faq-item" data-keywords="scan recognize error wrong receipt" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">The scanner didn't recognize my receipt correctly. What should I do?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">After scanning, all fields are editable before you save. Tap any field to correct it. For best results, make sure the receipt is well-lit, flat, and fully in frame. Very faded or handwritten receipts may need manual correction. You can also add records manually without scanning.</div></div>
       </div>
-
       <div class="faq-item" id="faq-subscription" data-keywords="subscription plan pro free upgrade cancel billing payment" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">What's included in the free plan?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">The free plan includes 1 vehicle and up to 10 service records with manual entry and basic history view. Docaro Pro adds unlimited vehicles, unlimited records, AI receipt scanning, smart reminders, PDF export, history transfer, and priority support — for $4.99/month or $29.99/year.</div></div>
       </div>
-
       <div class="faq-item" data-keywords="cancel subscription refund billing payment" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">How do I cancel my Pro subscription?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">Subscriptions are managed through the App Store (iOS) or Google Play (Android). To cancel: open <strong>Settings → Subscriptions</strong> on your device and select Docaro. You can cancel at any time — your Pro access continues until the end of the current billing period.</div></div>
       </div>
-
       <div class="faq-item" id="faq-transfer" data-keywords="transfer history sell new owner vehicle" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">How do I transfer my vehicle's history to a new owner?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">Open the vehicle profile, tap <strong>Transfer History</strong>, and enter the new owner's email address. They'll receive an invitation to claim the full service history in their own Docaro account. The history transfer is a Pro feature.</div></div>
       </div>
-
       <div class="faq-item" id="faq-export" data-keywords="pdf export share report print" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">How do I export a PDF service report?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">Open a vehicle profile and tap <strong>Export PDF</strong>. You'll get a clean, formatted service report with all records, dates, mileage, and costs. Share it directly via email, AirDrop, or any other app. PDF export is available on Docaro Pro.</div></div>
       </div>
-
       <div class="faq-item" id="faq-data" data-keywords="data privacy storage cloud sync security backup" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">Where is my data stored? Is it secure?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">Your data is stored securely in the cloud and synced across your devices. We never sell your data to third parties and never share it without your explicit consent. All data is encrypted in transit and at rest. You can delete your account and all associated data at any time from the app settings.</div></div>
       </div>
-
       <div class="faq-item" data-keywords="delete account data remove" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">How do I delete my account?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">Go to <strong>Settings → Account → Delete Account</strong>. Deleting your account permanently removes all your vehicles, records, and personal data from our servers. This action cannot be undone. If you have an active Pro subscription, cancel it before deleting your account.</div></div>
       </div>
-
       <div class="faq-item" data-keywords="reminder notification service date mileage" role="listitem">
         <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">How do smart reminders work?<svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="faq-answer"><div class="faq-answer-inner">When you log a service record, you can set a reminder by date (e.g. next oil change in 6 months) or by mileage (e.g. every 5,000 miles). Docaro will notify you in advance so you never miss a service. Reminders are a Pro feature and require notification permissions to be enabled on your device.</div></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -323,7 +290,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 
 <div class="section-divider"></div>
 
-<section class="section" style="background: var(--bg-surface);">
+<section class="section" style="background:var(--bg-surface)">
   <div class="container">
     <div class="section-header centered">
       <span class="t-label">Contact</span>
@@ -332,23 +299,16 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
     </div>
     <div class="contact-grid">
       <div class="contact-card primary">
-        <div class="contact-card-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" stroke="currentColor" stroke-width="1.5"/><path d="M3 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
+        <div class="contact-card-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" stroke="currentColor" stroke-width="1.5"/><path d="M3 7l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <div class="contact-card-body">
           <h3 class="t-h3">Email support</h3>
           <p class="t-body-sm">Send us a message and we'll respond within 24 hours on business days.</p>
           <div class="response-badge"><span class="response-dot"></span>Usually replies within 24h</div>
         </div>
-        <a href="mailto:support@botneversleeps.com" class="btn-primary">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4a1.5 1.5 0 011.5-1.5h9A1.5 1.5 0 0114 4v8a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 12V4z" stroke="currentColor" stroke-width="1.2"/><path d="M2 5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          support@botneversleeps.com
-        </a>
+        <a href="mailto:support@botneversleeps.com" class="btn-primary"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4a1.5 1.5 0 011.5-1.5h9A1.5 1.5 0 0114 4v8a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 12V4z" stroke="currentColor" stroke-width="1.2"/><path d="M2 5l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>support@botneversleeps.com</a>
       </div>
       <div class="contact-card">
-        <div class="contact-card-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6.6 2 3 5.1 3 9c0 2.4 1.3 4.5 3.3 5.8L5.5 18l3.5-1.8c.6.1 1.3.2 2 .2 4.4 0 8-3.1 8-7s-3.6-7-8-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="contact-card-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 2C6.6 2 3 5.1 3 9c0 2.4 1.3 4.5 3.3 5.8L5.5 18l3.5-1.8c.6.1 1.3.2 2 .2 4.4 0 8-3.1 8-7s-3.6-7-8-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
         <div class="contact-card-body">
           <h3 class="t-h3">Feature requests & feedback</h3>
           <p class="t-body-sm">Got an idea to make Docaro better? We read every message and use your feedback to shape the product roadmap.</p>
@@ -383,7 +343,6 @@ function toggleFAQ(btn) {
     btn.setAttribute('aria-expanded', 'true');
   }
 }
-
 function filterFAQ(query) {
   const q = query.toLowerCase().trim();
   document.querySelectorAll('.faq-item').forEach(item => {
@@ -394,7 +353,6 @@ function filterFAQ(query) {
     item.style.display = match ? '' : 'none';
   });
 }
-
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash;
   if (hash) {
@@ -407,6 +365,5 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
-
 </body>
 </html>

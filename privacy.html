@@ -4,86 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Docaro</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <style>
-
 :root {
-  --bg-base:        #080810;
-  --bg-surface:     #0F0F1A;
-  --bg-elevated:    #14141F;
-  --bg-card:        #17171F;
-  --accent:         #0A84FF;
-  --accent-dim:     rgba(10, 132, 255, 0.12);
-  --accent-border:  rgba(10, 132, 255, 0.30);
-  --text-primary:   #F5F5F7;
-  --text-secondary: #8E8E93;
-  --text-tertiary:  #48484A;
-  --border-subtle:  rgba(255, 255, 255, 0.05);
-  --border-card:    rgba(255, 255, 255, 0.08);
-  --font-display: 'SF Pro Display', -apple-system, 'Helvetica Neue', sans-serif;
-  --font-text:    'SF Pro Text',    -apple-system, 'Helvetica Neue', sans-serif;
-  --font-mono:    'SF Mono', 'Fira Code', monospace;
-  --space-sm: 8px; --space-md: 16px; --space-lg: 24px;
-  --space-xl: 40px; --space-3xl: 96px; --space-4xl: 128px;
-  --radius-lg: 16px;
-  --content-width: 1100px; --text-width: 720px;
+  --bg-base:#080810;--bg-surface:#0F0F1A;--bg-elevated:#14141F;--bg-card:#17171F;
+  --accent:#0A84FF;--accent-dim:rgba(10,132,255,0.12);--accent-border:rgba(10,132,255,0.30);
+  --text-primary:#F5F5F7;--text-secondary:#8E8E93;--text-tertiary:#48484A;
+  --border-subtle:rgba(255,255,255,0.05);--border-card:rgba(255,255,255,0.08);
+  --font-display:'SF Pro Display',-apple-system,'Helvetica Neue',sans-serif;
+  --font-text:'SF Pro Text',-apple-system,'Helvetica Neue',sans-serif;
+  --font-mono:'SF Mono','Fira Code',monospace;
+  --space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:40px;
+  --radius-lg:16px;--content-width:1100px;--text-width:720px;
+  --nav-h:72px;
 }
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { background-color: var(--bg-base); color: var(--text-primary); font-family: var(--font-text); font-size: 17px; line-height: 1.6; overflow-x: hidden; }
-
-.t-display { font-family: var(--font-display); font-size: clamp(32px, 5vw, 56px); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; }
-.t-label { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
-
-.container { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); }
-.section-divider { width: 100%; height: 1px; background: var(--border-subtle); }
-
-/* NAV */
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.72); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--border-subtle); }
-.nav-inner { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-lg); height: 56px; display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { display: flex; align-items: center; gap: var(--space-sm); text-decoration: none; }
-.nav-logo-mark { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
-.nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.nav-logo-text { font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); }
-.nav-links { display: flex; align-items: center; gap: var(--space-lg); }
-.nav-link { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
-.nav-link:hover { color: var(--text-primary); }
-.nav-cta { padding: 8px 18px; background: var(--accent); color: #fff; font-size: 14px; font-weight: 500; border-radius: 20px; text-decoration: none; transition: opacity 0.15s; }
-.nav-cta:hover { opacity: 0.88; }
-
-/* HERO */
-.page-hero { padding-top: calc(56px + 72px); padding-bottom: 64px; }
-.page-hero-inner { max-width: var(--text-width); display: flex; flex-direction: column; gap: var(--space-lg); }
-.last-updated { font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); letter-spacing: 0.06em; }
-
-/* CONTENT */
-.policy-body { padding: 64px 0 96px; }
-.policy-content { max-width: var(--text-width); display: flex; flex-direction: column; gap: 48px; }
-
-.policy-section { display: flex; flex-direction: column; gap: 16px; }
-.policy-section-title { font-family: var(--font-display); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); }
-.policy-section-body { font-size: 16px; line-height: 1.75; color: var(--text-secondary); white-space: pre-line; }
-.policy-section-body a { color: var(--accent); text-decoration: none; }
-.policy-section-body a:hover { text-decoration: underline; }
-
-/* Contact email highlight */
-.policy-email { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 10px 18px; background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: var(--radius-lg); font-family: var(--font-mono); font-size: 14px; color: var(--accent); text-decoration: none; transition: background 0.15s; }
-.policy-email:hover { background: rgba(10, 132, 255, 0.2); }
-
-/* FOOTER */
-.footer { border-top: 1px solid var(--border-subtle); padding: var(--space-xl) 0; }
-.footer-inner { max-width: var(--content-width); margin:0 auto; padding: 0 var(--space-lg); display:flex; align-items:center; justify-content:space-between; }
-.footer-copy { font-size: 13px; color: var(--text-tertiary); }
-.footer-links { display: flex; gap: var(--space-lg); }
-.footer-link { font-size: 13px; color: var(--text-tertiary); text-decoration: none; transition: color 0.15s; }
-.footer-link:hover { color: var(--text-secondary); }
-
-@media (max-width: 600px) {
-  .nav-inner, .container { padding: 0 var(--space-md); }
-  .nav-links { display: none; }
-  .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
-  .footer-links { flex-wrap: wrap; justify-content: center; }
-  .policy-section-title { font-size: 18px; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(--font-text);font-size:17px;line-height:1.6;overflow-x:hidden}
+.t-display{font-family:var(--font-display);font-size:clamp(32px,5vw,56px);font-weight:700;line-height:1.05;letter-spacing:-0.03em}
+.t-label{font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent)}
+.container{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg)}
+.section-divider{width:100%;height:1px;background:var(--border-subtle)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,16,0.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border-subtle)}
+.nav-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:var(--space-sm);text-decoration:none}
+.nav-logo-mark{width:48px;height:48px;border-radius:12px;overflow:hidden;flex-shrink:0}
+.nav-logo-mark img{width:100%;height:100%;object-fit:cover;display:block}
+.nav-logo-text{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.01em;color:var(--text-primary)}
+.nav-links{display:flex;align-items:center;gap:var(--space-lg)}
+.nav-link{font-size:14px;color:var(--text-secondary);text-decoration:none;transition:color 0.15s}
+.nav-link:hover{color:var(--text-primary)}
+.nav-cta{padding:8px 18px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;border-radius:20px;text-decoration:none;transition:opacity 0.15s}
+.nav-cta:hover{opacity:0.88}
+.page-hero{padding-top:calc(var(--nav-h) + 72px);padding-bottom:64px}
+.page-hero-inner{max-width:var(--text-width);display:flex;flex-direction:column;gap:var(--space-lg)}
+.last-updated{font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);letter-spacing:0.06em}
+.policy-body{padding:64px 0 96px}
+.policy-content{max-width:var(--text-width);display:flex;flex-direction:column;gap:48px}
+.policy-section{display:flex;flex-direction:column;gap:16px}
+.policy-section-title{font-family:var(--font-display);font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text-primary)}
+.policy-section-body{font-size:16px;line-height:1.75;color:var(--text-secondary);white-space:pre-line}
+.policy-section-body a{color:var(--accent);text-decoration:none}
+.policy-section-body a:hover{text-decoration:underline}
+.policy-email{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:10px 18px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--radius-lg);font-family:var(--font-mono);font-size:14px;color:var(--accent);text-decoration:none;transition:background 0.15s}
+.policy-email:hover{background:rgba(10,132,255,0.2)}
+.footer{border-top:1px solid var(--border-subtle);padding:var(--space-xl) 0}
+.footer-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:13px;color:var(--text-tertiary)}
+.footer-links{display:flex;gap:var(--space-lg)}
+.footer-link{font-size:13px;color:var(--text-tertiary);text-decoration:none;transition:color 0.15s}
+.footer-link:hover{color:var(--text-secondary)}
+@media(max-width:600px){
+  .nav-inner,.container{padding:0 var(--space-md)}
+  .nav-links{display:none}
+  .footer-inner{flex-direction:column;gap:12px;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+  .policy-section-title{font-size:18px}
+  .nav-logo-mark{width:40px;height:40px}
 }
 </style>
 </head>
@@ -93,7 +70,7 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-mark">
-        <img src="assets/icons/app-icon.svg" alt="Docaro" width="32" height="32"/>
+        <img src="assets/docaro_ava_v4_1024.png" alt="Docaro" width="48" height="48"/>
       </div>
       <span class="nav-logo-text">Docaro</span>
     </a>
@@ -105,7 +82,6 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-inner">
@@ -118,16 +94,13 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 
 <div class="section-divider"></div>
 
-<!-- POLICY BODY -->
 <section class="policy-body">
   <div class="container">
     <div class="policy-content">
-
       <div class="policy-section">
         <h2 class="policy-section-title">1. Introduction</h2>
         <p class="policy-section-body">Docaro ("we", "us", "our") is a mobile application for tracking vehicle service history. This Privacy Policy explains how we collect, use, and protect your personal data in accordance with the General Data Protection Regulation (GDPR) and applicable laws of the Republic of Latvia.</p>
       </div>
-
       <div class="policy-section">
         <h2 class="policy-section-title">2. Data We Collect</h2>
         <p class="policy-section-body">We collect the following data that you provide directly:
@@ -138,7 +111,6 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 • Reminders and notification preferences
 • FCM device token for push notifications</p>
       </div>
-
       <div class="policy-section">
         <h2 class="policy-section-title">3. How We Use Your Data</h2>
         <p class="policy-section-body">Your data is used exclusively to:
@@ -150,7 +122,6 @@ body { background-color: var(--bg-base); color: var(--text-primary); font-family
 
 We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
       </div>
-
       <div class="policy-section">
         <h2 class="policy-section-title">4. Third-Party Services</h2>
         <p class="policy-section-body">Docaro uses the following third-party services that may process your data:
@@ -161,12 +132,10 @@ We do not sell, rent, or share your personal data with third parties for marketi
 
 All third-party processors are bound by GDPR-compliant data processing agreements.</p>
       </div>
-
       <div class="policy-section">
         <h2 class="policy-section-title">5. Data Retention</h2>
         <p class="policy-section-body">Your data is retained for as long as your account is active. You may delete all your data at any time via Settings → Delete account and data. Upon deletion, all personal data is permanently removed from our servers within 30 days.</p>
       </div>
-
       <div class="policy-section">
         <h2 class="policy-section-title">6. Your Rights (GDPR)</h2>
         <p class="policy-section-body">Under GDPR, you have the right to:
@@ -180,7 +149,6 @@ All third-party processors are bound by GDPR-compliant data processing agreement
 
 To exercise your rights, contact us at <a href="mailto:support@botneversleeps.com">support@botneversleeps.com</a>. You also have the right to lodge a complaint with the Data State Inspectorate of Latvia (<a href="https://www.dvi.gov.lv" target="_blank" rel="noopener">dvi.gov.lv</a>).</p>
       </div>
-
       <div class="policy-section">
         <h2 class="policy-section-title">7. Contact Us</h2>
         <p class="policy-section-body">For any questions about this Privacy Policy or your personal data, contact us at:</p>
@@ -189,7 +157,6 @@ To exercise your rights, contact us at <a href="mailto:support@botneversleeps.co
           support@botneversleeps.com
         </a>
       </div>
-
     </div>
   </div>
 </section>
@@ -201,7 +168,6 @@ To exercise your rights, contact us at <a href="mailto:support@botneversleeps.co
       <a href="index.html" class="footer-link">Home</a>
       <a href="support.html" class="footer-link">Support</a>
       <a href="privacy.html" class="footer-link">Privacy</a>
-      <a href="terms.html" class="footer-link">Terms</a>
     </div>
   </div>
 </footer>

@@ -65,6 +65,7 @@
   --space-xl:40px;--space-2xl:64px;--space-3xl:96px;--space-4xl:128px;
   --radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;
   --content-width:1100px;--text-width:680px;
+  --nav-h:72px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
@@ -80,14 +81,14 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
 .section-header{text-align:center;margin-bottom:var(--space-3xl);display:flex;flex-direction:column;align-items:center;gap:var(--space-md)}
 .section-divider{width:100%;height:1px;background:var(--border-subtle)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,16,0.72);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border-subtle)}
-.nav-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:var(--space-sm);text-decoration:none}
-.nav-logo-mark{width:32px;height:32px;border-radius:8px;overflow:hidden;flex-shrink:0}
+.nav-logo-mark{width:48px;height:48px;border-radius:12px;overflow:hidden;flex-shrink:0}
 .nav-logo-mark img{width:100%;height:100%;object-fit:cover;display:block}
 .nav-logo-text{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.01em;color:var(--text-primary)}
 .nav-cta{padding:8px 18px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;border-radius:20px;text-decoration:none;transition:opacity 0.15s}
 .nav-cta:hover{opacity:0.88}
-.hero{padding-top:calc(56px + var(--space-4xl));padding-bottom:var(--space-4xl);min-height:100svh;display:flex;align-items:center}
+.hero{padding-top:calc(var(--nav-h) + var(--space-4xl));padding-bottom:var(--space-4xl);min-height:100svh;display:flex;align-items:center}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3xl);align-items:center}
 .hero-content{display:flex;flex-direction:column;gap:var(--space-lg)}
 .hero-headline{display:flex;flex-direction:column;gap:var(--space-md)}
@@ -197,6 +198,7 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
   .btn-store{width:100%;justify-content:center}
   .store-actions{flex-direction:column;align-items:stretch}
   .store-actions.centered{align-items:center}
+  .nav-logo-mark{width:40px;height:40px}
 }
 </style>
 </head>
@@ -204,7 +206,7 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <div class="nav-logo-mark"><img src="assets/icons/app-icon.png" alt="Docaro" width="32" height="32"/></div>
+      <div class="nav-logo-mark"><img src="assets/docaro_ava_v4_1024.png" alt="Docaro" width="48" height="48"/></div>
       <span class="nav-logo-text">Docaro</span>
     </a>
     <a href="#" class="nav-cta">Download Free</a>
