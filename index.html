@@ -209,7 +209,7 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
       <div class="nav-logo-mark"><img src="assets/icons/mainapp_icon_512.png" alt="Docaro" width="48" height="48"/></div>
       <span class="nav-logo-text">Docaro</span>
     </a>
-    <a href="https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8" class="nav-cta">Download Free</a>
+    <a href="https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8" class="nav-cta" data-store-auto>Download Free</a>
   </div>
 </nav>
 <section class="hero">
@@ -339,7 +339,7 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
           <li><span class="check muted"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5l2 2 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Manual entry</li>
           <li><span class="check muted"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5l2 2 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Basic history view</li>
         </ul>
-        <div class="pricing-cta"><a href="https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8" class="btn-secondary">Download Free</a></div>
+        <div class="pricing-cta"><a href="https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8" class="btn-secondary" data-store-auto>Download Free</a></div>
       </div>
       <div class="pricing-card pricing-pro">
         <div class="pricing-popular">Most Popular</div>
@@ -355,7 +355,7 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
           <li><span class="check accent"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5l2 2 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Priority support</li>
         </ul>
         <div class="pricing-cta">
-          <a href="https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8" class="btn-primary">Start with Pro</a>
+          <a href="https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8" class="btn-primary" data-store-auto>Start with Pro</a>
           <span class="cancel-line">Cancel anytime. No questions asked.</span>
         </div>
       </div>
@@ -394,5 +394,15 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
     </div>
   </div>
 </footer>
+<script>
+(function(){
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+  var appStoreUrl = 'https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8';
+  var googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.botneversleepslabs.docaro&referrer=utm_source%3Dlanding%26utm_medium%3Dwebsite%26utm_campaign%3Dwarm_launch';
+  var targetUrl = isAndroid ? googlePlayUrl : appStoreUrl;
+  document.querySelectorAll('[data-store-auto]').forEach(function(el){ el.setAttribute('href', targetUrl); });
+})();
+</script>
 </body>
 </html>
