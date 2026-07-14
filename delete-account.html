@@ -86,7 +86,7 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
       <a href="support.html" class="nav-link">Support</a>
       <a href="privacy.html" class="nav-link">Privacy</a>
     </div>
-    <a href="https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8" class="nav-cta">Download Free</a>
+    <a href="https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8" class="nav-cta" data-store-auto>Download Free</a>
   </div>
 </nav>
 
@@ -185,5 +185,15 @@ Your subscription history is managed by Apple App Store or Google Play and is su
   </div>
 </footer>
 
+<script>
+(function(){
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+  var appStoreUrl = 'https://apps.apple.com/app/apple-store/id6769462484?pt=128907394&ct=landing&mt=8';
+  var googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.botneversleepslabs.docaro&referrer=utm_source%3Dlanding%26utm_medium%3Dwebsite%26utm_campaign%3Dwarm_launch';
+  var targetUrl = isAndroid ? googlePlayUrl : appStoreUrl;
+  document.querySelectorAll('[data-store-auto]').forEach(function(el){ el.setAttribute('href', targetUrl); });
+})();
+</script>
 </body>
 </html>
