@@ -1,0 +1,20 @@
+# Docaro
+
+> Docaro is an AI-powered digital service book for cars and vehicles — a car maintenance tracker, vehicle service log, and auto repair history app in one. Users photograph a paper or digital receipt and Docaro's AI automatically logs the service record — date, mileage, service type, and cost — no manual entry required. Free on iOS and Android, with a Pro tier for unlimited vehicles and records.
+
+## Product
+- [Homepage](https://docaro.botneversleeps.com/): Overview, features, and pricing (Free vs Pro)
+- [Support & FAQ](https://docaro.botneversleeps.com/support.html): Questions about the AI receipt scanner, subscriptions, PDF export, and data privacy
+- [Privacy Policy](https://docaro.botneversleeps.com/privacy.html): Data handling and privacy practices
+
+## Facts
+- Category: car maintenance tracker, vehicle service log, digital car logbook, auto repair history app
+- Platforms: iOS and Android
+- Free plan: 1 vehicle, 10 service records, manual entry
+- Pro plan: $4.99/month or $39.99/year — unlimited vehicles and records, AI receipt scanner, PDF export, smart reminders, history transfer
+- Key differentiator: the AI receipt scanner reads receipts in any language and auto-fills oil change, tire rotation, brake service, insurance, and inspection records
+- No hardware required: no OBD-II dongle or Bluetooth device — receipt-based logging only
+- Use case: replaces a paper vehicle service logbook; useful for tracking maintenance costs and proving service history when selling a car
+
+## Optional
+- [Delete Account](https://docaro.botneversleeps.com/delete-account.html): Instructions for account and data deletion (GDPR)
