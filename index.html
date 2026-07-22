@@ -9,7 +9,7 @@
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://api.producthunt.com; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
 
 <title>Docaro — Digital Service Book for Cars &amp; Vehicles</title>
 <meta name="description" content="Snap a receipt and Docaro logs your service history instantly. AI-powered car service book — oil changes, reminders, expenses, PDF export. Free on iOS &amp; Android.">
@@ -174,11 +174,13 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
 .final-visual{width:100%;max-width:880px;border-radius:var(--radius-xl);overflow:hidden;background:var(--bg-card);border:1px solid var(--border-card);margin:0 auto;line-height:0}
 .final-visual img{width:100%;height:auto;display:block}
 .footer{border-top:1px solid var(--border-subtle);padding:var(--space-xl) 0}
-.footer-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);display:flex;align-items:center;justify-content:space-between}
+.footer-inner{max-width:var(--content-width);margin:0 auto;padding:0 var(--space-lg);display:flex;flex-direction:column;align-items:center;gap:var(--space-lg)}
+.footer-bottom{width:100%;display:flex;align-items:center;justify-content:space-between}
 .footer-copy{font-size:13px;color:var(--text-tertiary)}
 .footer-links{display:flex;gap:var(--space-lg)}
 .footer-link{font-size:13px;color:var(--text-tertiary);text-decoration:none;transition:color 0.15s}
 .footer-link:hover{color:var(--text-secondary)}
+.footer-badge{display:flex;align-items:center;justify-content:center;line-height:0}
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:var(--space-xl)}
   .hero-visual{order:-1}
@@ -194,7 +196,7 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
 @media(max-width:600px){
   .section{padding:var(--space-3xl) 0}
   .nav-inner,.container{padding:0 var(--space-md)}
-  .footer-inner{flex-direction:column;gap:var(--space-sm);text-align:center}
+  .footer-bottom{flex-direction:column;gap:var(--space-sm);text-align:center}
   .btn-store{width:100%;justify-content:center}
   .store-actions{flex-direction:column;align-items:stretch}
   .store-actions.centered{align-items:center}
@@ -387,10 +389,13 @@ body{background-color:var(--bg-base);color:var(--text-primary);font-family:var(-
 </section>
 <footer class="footer">
   <div class="footer-inner">
-    <span class="footer-copy">&copy; 2026 Docaro. All rights reserved.</span>
-    <div class="footer-links">
-      <a href="support.html" class="footer-link">Support</a>
-      <a href="privacy.html" class="footer-link">Privacy</a>
+    <a href="https://www.producthunt.com/products/docaro?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-docaro-car-service-book" target="_blank" rel="noopener noreferrer" class="footer-badge"><img alt="Docaro - Car Service Book - AI car maintenance tracker — snap a receipt, done | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1192222&theme=dark&t=1784710097060"></a>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Docaro. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="support.html" class="footer-link">Support</a>
+        <a href="privacy.html" class="footer-link">Privacy</a>
+      </div>
     </div>
   </div>
 </footer>
